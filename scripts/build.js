@@ -268,7 +268,7 @@ const checkRules = (metadata) => {
             width: 3,
             align: 'right'
         }, {
-            name: 'Name',
+            name: 'Rule',
             width: w
         }, {
             name: '',
