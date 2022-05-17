@@ -229,7 +229,11 @@ const checkRules = (metadata) => {
         EC.logRed(`normal missing ${i + 1}: ${name}`);
     });
 
+    let w = 0;
+
     const rows = allList.map((item, i) => {
+
+        w = Math.max(w, item.name.length);
 
         //console.log(item);
         const name = `[${item.name}](https://eslint.org/docs/rules/${item.name})`;
@@ -243,7 +247,7 @@ const checkRules = (metadata) => {
 
         const plus = v || recommended || '';
 
-        return [i + 1, name, recommended, fixable, plus];
+        return [i + 1, name, fixable, plus];
     });
 
     const readmeTable = getMarkDownTable({
@@ -253,16 +257,13 @@ const checkRules = (metadata) => {
             align: 'right'
         }, {
             name: 'Name',
-            width: 20
-        }, {
-            name: 'Recommended',
-            width: 3
+            width: w
         }, {
             name: 'Fixable',
-            width: 3
+            width: 2
         }, {
             name: 'Plus',
-            width: 30
+            width: 10
         }],
         rows
     });
