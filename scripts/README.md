@@ -18,5 +18,5 @@ module.exports = {
 };
 ```
 
-## Rules ({replace_holder_date})
+## Rules
 {replace_holder_rules}

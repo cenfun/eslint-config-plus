@@ -15,10 +15,13 @@ const getMarkDownTable = function(d) {
 
     const line = [''];
     d.columns.forEach((c) => {
-        if (c.align === 'right') {
-            line.push(`${''.padEnd(c.width - 1, '-')}:`);
+        const dash = ''.padEnd(c.width - 1, '-');
+        if (c.align === 'left') {
+            line.push(`:${dash}`);
+        } else if (c.align === 'right') {
+            line.push(`${dash}:`);
         } else {
-            line.push(''.padEnd(c.width, '-'));
+            line.push(`${dash}-`);
         }
         
     });
@@ -80,6 +83,8 @@ const checkRules = (metadata) => {
     });
     console.log('');
 
+    const info = `Base on eslint@${metadata.version} (${metadata.date})  \n`;
+
     const recommendedIcon = '✔';
     const fixableIcon = '✎';
 
@@ -122,7 +127,8 @@ const checkRules = (metadata) => {
             align: 'right'
         }, {
             name: 'rule',
-            width: w
+            width: w,
+            align: 'left'
         }, {
             name: '',
             width: 2
@@ -131,14 +137,14 @@ const checkRules = (metadata) => {
             width: 2
         }, {
             name: 'defined in plus',
-            width: 10
+            width: 10,
+            align: 'left'
         }],
         rows
     });
 
     let readmeContent = fs.readFileSync(path.resolve(__dirname, 'README.md')).toString('utf-8');
-    readmeContent = readmeContent.replace('{replace_holder_date}', metadata.date);
-    readmeContent = readmeContent.replace('{replace_holder_rules}', legend + total + readmeTable);
+    readmeContent = readmeContent.replace('{replace_holder_rules}', info + legend + total + readmeTable);
     const readmePath = path.resolve(__dirname, '../README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
@@ -169,8 +175,11 @@ const start = () => {
     });
 
     // console.log(rules);
+
+    const version = require('../node_modules/eslint/package.json').version;
     
     const metadata = {
+        version,
         date,
         rules
     };

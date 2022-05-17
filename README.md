@@ -18,11 +18,12 @@ module.exports = {
 };
 ```
 
-## Rules (2022/5/17)
+## Rules
+Base on eslint@8.15.0 (2022/5/18)  
 Recommended: ✔  Fixable: ✎  
 Undefined in plus: 63  
 |   |rule                            |  |  |defined in plus
-|--:|--------------------------------|--|--|----------
+|--:|:-------------------------------|--|--|:---------
 |  1|[accessor-pairs](https://eslint.org/docs/rules/accessor-pairs)|  |  |          
 |  2|[array-bracket-newline](https://eslint.org/docs/rules/array-bracket-newline)|  |✎ |["error","consistent"]
 |  3|[array-bracket-spacing](https://eslint.org/docs/rules/array-bracket-spacing)|  |✎ |["error","never"]
