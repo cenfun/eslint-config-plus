@@ -1,5 +1,5 @@
 # eslint-config-plus
-Eslint config plus base on official recommended rules + most fixable and normal rules.  
+Eslint config plus = Eslint official recommended rules + most fixable and normal rules.  
 [https://eslint.org/docs/rules/](https://eslint.org/docs/rules/)
 
 # Installation
