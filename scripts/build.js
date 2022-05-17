@@ -215,19 +215,19 @@ const checkRules = (metadata) => {
     });
 
     
-    // fixableList.forEach((name, i) => {
-    //     EC.logGreen(`fixable ${i + 1}: ${name}`);
-    // });
     fixableMissingList.forEach((name, i) => {
-        EC.logRed(`fixable missing ${i + 1}: ${name}`);
+        EC.logRed(`missing fixable: ${i + 1}: ${name}`);
     });
 
-    // normalList.forEach((name, i) => {
-    //     EC.logGreen(`normal ${i + 1}: ${name}`);
-    // });
+
     normalMissingList.forEach((name, i) => {
-        EC.logRed(`normal missing ${i + 1}: ${name}`);
+        EC.logRed(`missing normal: ${i + 1}: ${name}`);
     });
+
+    const recommendedIcon = '✓';
+    const fixableIcon = '🔧';
+
+    const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  \n`;
 
     let w = 0;
 
@@ -237,8 +237,8 @@ const checkRules = (metadata) => {
 
         //console.log(item);
         const name = `[${item.name}](https://eslint.org/docs/rules/${item.name})`;
-        const recommended = item.recommended ? '✓' : '';
-        const fixable = item.fixable ? '🔧' : '';
+        const recommended = item.recommended ? recommendedIcon : '';
+        const fixable = item.fixable ? fixableIcon : '';
 
         let v = myRules[item.name];
         if (v) {
@@ -247,7 +247,7 @@ const checkRules = (metadata) => {
 
         const plus = v || recommended || '';
 
-        return [i + 1, name, fixable, plus];
+        return [i + 1, name, recommended, fixable, plus];
     });
 
     const readmeTable = getMarkDownTable({
@@ -259,7 +259,10 @@ const checkRules = (metadata) => {
             name: 'Name',
             width: w
         }, {
-            name: 'Fixable',
+            name: '',
+            width: 2
+        }, {
+            name: '',
             width: 2
         }, {
             name: 'Plus',
@@ -270,7 +273,7 @@ const checkRules = (metadata) => {
 
     let readmeContent = fs.readFileSync(path.resolve(__dirname, 'README.md')).toString('utf-8');
     readmeContent = readmeContent.replace('{replace_holder_date}', metadata.date);
-    readmeContent = readmeContent.replace('{replace_holder_rules}', readmeTable);
+    readmeContent = readmeContent.replace('{replace_holder_rules}', legend + readmeTable);
     const readmePath = path.resolve(__dirname, '../README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
