@@ -230,8 +230,8 @@ const checkRules = (metadata) => {
         EC.logRed(`missing normal: ${i + 1}: ${name}`);
     });
 
-    const recommendedIcon = '✓';
-    const fixableIcon = '🔧';
+    const recommendedIcon = '✔';
+    const fixableIcon = '✎';
 
     const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  \n`;
 
