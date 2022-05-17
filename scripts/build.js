@@ -3,6 +3,44 @@ const path = require('path');
 const EC = require('eight-colors');
 const PCR = require('puppeteer-chromium-resolver');
 
+const getMarkDownTable = function(d) {
+    //console.log(d);
+    const lines = [];
+
+    const header = [''];
+    d.columns.forEach((c) => {
+        const cn = c.name || '';
+        header.push(cn.padEnd(c.width, ' '));
+    });
+    lines.push(header.join('|'));
+
+    const line = [''];
+    d.columns.forEach(c => {
+        if (c.align === 'right') {
+            line.push(`${''.padEnd(c.width - 1, '-')}:`);
+        } else {
+            line.push(''.padEnd(c.width, '-'));
+        }
+        
+    });
+    lines.push(line.join('|'));
+
+    d.rows.forEach((r) => {
+        const row = [''];
+        d.columns.forEach((c, i) => {
+            const s = `${r[i]}`;
+            if (c.align === 'right') {
+                row.push(s.padStart(c.width, ' '));
+            } else {
+                row.push(s.padEnd(c.width, ' '));
+            }
+        });
+        lines.push(row.join('|'));
+    });
+
+    return lines.join('\r\n');
+};
+
 const loadRules = async () => {
 
     const option = {
@@ -120,15 +158,18 @@ const loadRules = async () => {
 };
 
 const checkRules = (metadata) => {
-    const rules = metadata.rules;
-    const eslintrc = require(path.resolve(__dirname, '../lib/index.js'));
+    const allRules = metadata.rules;
+    const myEslint = require(path.resolve(__dirname, '../lib/index.js'));
+
+    const myRules = myEslint.rules;
 
     //check deprecated/removed/recommended
     const fixableList = [];
     const normalList = [];
-    Object.keys(eslintrc.rules).forEach(name => {
-        const rule = rules[name];
+    Object.keys(myRules).forEach(name => {
+        const rule = allRules[name];
         if (!rule) {
+            //no plugin rules
             if (name.indexOf('/') === -1) {
                 EC.logRed(`not found: ${name}`);
             }
@@ -153,15 +194,17 @@ const checkRules = (metadata) => {
         }
     });
 
+    const allList = [];
     //check fixable
     const fixableMissingList = [];
     const normalMissingList = [];
-    Object.keys(rules).forEach(name => {
-        const rule = rules[name];
+    Object.keys(allRules).forEach(name => {
+        const rule = allRules[name];
+        allList.push(rule);
         if (rule.recommended || rule.deprecated || rule.removed) {
             return;
         }
-        const item = eslintrc.rules[name];
+        const item = myRules[name];
         if (!item) {
             if (rule.fixable) {
                 fixableMissingList.push(name);
@@ -172,19 +215,64 @@ const checkRules = (metadata) => {
     });
 
     
-    fixableList.forEach((name, i) => {
-        EC.logGreen(`fixable ${i + 1}: ${name}`);
-    });
+    // fixableList.forEach((name, i) => {
+    //     EC.logGreen(`fixable ${i + 1}: ${name}`);
+    // });
     fixableMissingList.forEach((name, i) => {
         EC.logRed(`fixable missing ${i + 1}: ${name}`);
     });
 
-    normalList.forEach((name, i) => {
-        EC.logGreen(`normal ${i + 1}: ${name}`);
-    });
+    // normalList.forEach((name, i) => {
+    //     EC.logGreen(`normal ${i + 1}: ${name}`);
+    // });
     normalMissingList.forEach((name, i) => {
         EC.logRed(`normal missing ${i + 1}: ${name}`);
     });
+
+    const rows = allList.map((item, i) => {
+
+        //console.log(item);
+        const name = `[${item.name}](https://eslint.org/docs/rules/${item.name})`;
+        const recommended = item.recommended ? '✓' : '';
+        const fixable = item.fixable ? '🔧' : '';
+
+        let v = myRules[item.name];
+        if (v) {
+            v = JSON.stringify(v);
+        }
+
+        const plus = v || recommended || '';
+
+        return [i + 1, name, recommended, fixable, plus];
+    });
+
+    const readmeTable = getMarkDownTable({
+        columns: [{
+            name: '',
+            width: 3,
+            align: 'right'
+        }, {
+            name: 'Name',
+            width: 20
+        }, {
+            name: 'Recommended',
+            width: 3
+        }, {
+            name: 'Fixable',
+            width: 3
+        }, {
+            name: 'Plus',
+            width: 30
+        }],
+        rows
+    });
+
+    let readmeContent = fs.readFileSync(path.resolve(__dirname, 'README.md')).toString('utf-8');
+    readmeContent = readmeContent.replace('{replace_holder_date}', metadata.date);
+    readmeContent = readmeContent.replace('{replace_holder_rules}', readmeTable);
+    const readmePath = path.resolve(__dirname, '../README.md');
+    fs.writeFileSync(readmePath, readmeContent);
+    EC.logGreen('generated README.md');
 
 };
 
