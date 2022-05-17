@@ -13,12 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/cenfun/eslint-config-plus.git"
   },
-  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cenfun/eslint-config-plus/issues"
-  },
-  "homepage": "https://github.com/cenfun/eslint-config-plus#readme",
   "devDependencies": {
     "eslint": "^8.15.0",
     "puppeteer-chromium-resolver": "^14.0.0"
