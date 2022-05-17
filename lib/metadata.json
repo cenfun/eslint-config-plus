@@ -1,1148 +1,585 @@
 {
     "date": "2022/5/17",
     "rules": {
-        "accessor-pairs": {
-            "name": "accessor-pairs"
-        },
+        "accessor-pairs": {},
         "array-bracket-newline": {
-            "fixable": true,
-            "name": "array-bracket-newline"
+            "fixable": true
         },
         "array-bracket-spacing": {
-            "fixable": true,
-            "name": "array-bracket-spacing"
+            "fixable": true
         },
-        "array-callback-return": {
-            "name": "array-callback-return"
-        },
+        "array-callback-return": {},
         "array-element-newline": {
-            "fixable": true,
-            "name": "array-element-newline"
+            "fixable": true
         },
         "arrow-body-style": {
-            "fixable": true,
-            "name": "arrow-body-style"
+            "fixable": true
         },
         "arrow-parens": {
-            "fixable": true,
-            "name": "arrow-parens"
+            "fixable": true
         },
         "arrow-spacing": {
-            "fixable": true,
-            "name": "arrow-spacing"
+            "fixable": true
         },
-        "block-scoped-var": {
-            "name": "block-scoped-var"
-        },
+        "block-scoped-var": {},
         "block-spacing": {
-            "fixable": true,
-            "name": "block-spacing"
+            "fixable": true
         },
         "brace-style": {
-            "fixable": true,
-            "name": "brace-style"
+            "fixable": true
         },
-        "callback-return": {
-            "deprecated": true,
-            "name": "callback-return"
-        },
-        "camelcase": {
-            "name": "camelcase"
-        },
+        "camelcase": {},
         "capitalized-comments": {
-            "fixable": true,
-            "name": "capitalized-comments"
+            "fixable": true
         },
-        "class-methods-use-this": {
-            "name": "class-methods-use-this"
-        },
+        "class-methods-use-this": {},
         "comma-dangle": {
-            "fixable": true,
-            "name": "comma-dangle"
+            "fixable": true
         },
         "comma-spacing": {
-            "fixable": true,
-            "name": "comma-spacing"
+            "fixable": true
         },
         "comma-style": {
-            "fixable": true,
-            "name": "comma-style"
+            "fixable": true
         },
-        "complexity": {
-            "name": "complexity"
-        },
+        "complexity": {},
         "computed-property-spacing": {
-            "fixable": true,
-            "name": "computed-property-spacing"
+            "fixable": true
         },
-        "consistent-return": {
-            "name": "consistent-return"
-        },
-        "consistent-this": {
-            "name": "consistent-this"
-        },
+        "consistent-return": {},
+        "consistent-this": {},
         "constructor-super": {
-            "recommended": true,
-            "name": "constructor-super"
+            "recommended": true
         },
         "curly": {
-            "fixable": true,
-            "name": "curly"
+            "fixable": true
         },
-        "default-case": {
-            "name": "default-case"
-        },
-        "default-case-last": {
-            "name": "default-case-last"
-        },
-        "default-param-last": {
-            "name": "default-param-last"
-        },
+        "default-case": {},
+        "default-case-last": {},
+        "default-param-last": {},
         "dot-location": {
-            "fixable": true,
-            "name": "dot-location"
+            "fixable": true
         },
         "dot-notation": {
-            "fixable": true,
-            "name": "dot-notation"
+            "fixable": true
         },
         "eol-last": {
-            "fixable": true,
-            "name": "eol-last"
+            "fixable": true
         },
         "eqeqeq": {
-            "fixable": true,
-            "name": "eqeqeq"
+            "fixable": true
         },
         "for-direction": {
-            "recommended": true,
-            "name": "for-direction"
+            "recommended": true
         },
         "func-call-spacing": {
-            "fixable": true,
-            "name": "func-call-spacing"
+            "fixable": true
         },
-        "func-name-matching": {
-            "name": "func-name-matching"
-        },
-        "func-names": {
-            "name": "func-names"
-        },
-        "func-style": {
-            "name": "func-style"
-        },
+        "func-name-matching": {},
+        "func-names": {},
+        "func-style": {},
         "function-call-argument-newline": {
-            "fixable": true,
-            "name": "function-call-argument-newline"
+            "fixable": true
         },
         "function-paren-newline": {
-            "fixable": true,
-            "name": "function-paren-newline"
-        },
-        "generator-star": {
-            "removed": true,
-            "name": "generator-star",
-            "replaced": "generator-star-spacing"
+            "fixable": true
         },
         "generator-star-spacing": {
-            "fixable": true,
-            "name": "generator-star-spacing"
+            "fixable": true
         },
         "getter-return": {
-            "recommended": true,
-            "name": "getter-return"
+            "recommended": true
         },
-        "global-require": {
-            "deprecated": true,
-            "name": "global-require"
-        },
-        "global-strict": {
-            "removed": true,
-            "name": "global-strict",
-            "replaced": "strict"
-        },
-        "grouped-accessor-pairs": {
-            "name": "grouped-accessor-pairs"
-        },
-        "guard-for-in": {
-            "name": "guard-for-in"
-        },
-        "handle-callback-err": {
-            "deprecated": true,
-            "name": "handle-callback-err"
-        },
-        "id-blacklist": {
-            "deprecated": true,
-            "name": "id-blacklist",
-            "replaced": "id-denylist"
-        },
-        "id-denylist": {
-            "name": "id-denylist"
-        },
-        "id-length": {
-            "name": "id-length"
-        },
-        "id-match": {
-            "name": "id-match"
-        },
+        "grouped-accessor-pairs": {},
+        "guard-for-in": {},
+        "id-denylist": {},
+        "id-length": {},
+        "id-match": {},
         "implicit-arrow-linebreak": {
-            "fixable": true,
-            "name": "implicit-arrow-linebreak"
+            "fixable": true
         },
         "indent": {
-            "fixable": true,
-            "name": "indent"
+            "fixable": true
         },
-        "indent-legacy": {
-            "deprecated": true,
-            "name": "indent-legacy",
-            "replaced": "indent"
-        },
-        "init-declarations": {
-            "name": "init-declarations"
-        },
+        "init-declarations": {},
         "jsx-quotes": {
-            "fixable": true,
-            "name": "jsx-quotes"
+            "fixable": true
         },
         "key-spacing": {
-            "fixable": true,
-            "name": "key-spacing"
+            "fixable": true
         },
         "keyword-spacing": {
-            "fixable": true,
-            "name": "keyword-spacing"
+            "fixable": true
         },
-        "line-comment-position": {
-            "name": "line-comment-position"
-        },
+        "line-comment-position": {},
         "linebreak-style": {
-            "fixable": true,
-            "name": "linebreak-style"
+            "fixable": true
         },
         "lines-around-comment": {
-            "fixable": true,
-            "name": "lines-around-comment"
-        },
-        "lines-around-directive": {
-            "deprecated": true,
-            "name": "lines-around-directive",
-            "replaced": "padding-line-between-statements"
+            "fixable": true
         },
         "lines-between-class-members": {
-            "fixable": true,
-            "name": "lines-between-class-members"
+            "fixable": true
         },
-        "max-classes-per-file": {
-            "name": "max-classes-per-file"
-        },
-        "max-depth": {
-            "name": "max-depth"
-        },
-        "max-len": {
-            "name": "max-len"
-        },
-        "max-lines": {
-            "name": "max-lines"
-        },
-        "max-lines-per-function": {
-            "name": "max-lines-per-function"
-        },
-        "max-nested-callbacks": {
-            "name": "max-nested-callbacks"
-        },
-        "max-params": {
-            "name": "max-params"
-        },
-        "max-statements": {
-            "name": "max-statements"
-        },
-        "max-statements-per-line": {
-            "name": "max-statements-per-line"
-        },
+        "max-classes-per-file": {},
+        "max-depth": {},
+        "max-len": {},
+        "max-lines": {},
+        "max-lines-per-function": {},
+        "max-nested-callbacks": {},
+        "max-params": {},
+        "max-statements": {},
+        "max-statements-per-line": {},
         "multiline-comment-style": {
-            "fixable": true,
-            "name": "multiline-comment-style"
+            "fixable": true
         },
         "multiline-ternary": {
-            "fixable": true,
-            "name": "multiline-ternary"
+            "fixable": true
         },
-        "new-cap": {
-            "name": "new-cap"
-        },
+        "new-cap": {},
         "new-parens": {
-            "fixable": true,
-            "name": "new-parens"
-        },
-        "newline-after-var": {
-            "deprecated": true,
-            "name": "newline-after-var",
-            "replaced": "padding-line-between-statements"
-        },
-        "newline-before-return": {
-            "deprecated": true,
-            "name": "newline-before-return",
-            "replaced": "padding-line-between-statements"
+            "fixable": true
         },
         "newline-per-chained-call": {
-            "fixable": true,
-            "name": "newline-per-chained-call"
+            "fixable": true
         },
-        "no-alert": {
-            "name": "no-alert"
-        },
-        "no-array-constructor": {
-            "name": "no-array-constructor"
-        },
-        "no-arrow-condition": {
-            "removed": true,
-            "name": "no-arrow-condition",
-            "replaced": "no-confusing-arrow no-constant-condition"
-        },
+        "no-alert": {},
+        "no-array-constructor": {},
         "no-async-promise-executor": {
-            "recommended": true,
-            "name": "no-async-promise-executor"
+            "recommended": true
         },
-        "no-await-in-loop": {
-            "name": "no-await-in-loop"
-        },
-        "no-bitwise": {
-            "name": "no-bitwise"
-        },
-        "no-buffer-constructor": {
-            "deprecated": true,
-            "name": "no-buffer-constructor"
-        },
-        "no-caller": {
-            "name": "no-caller"
-        },
+        "no-await-in-loop": {},
+        "no-bitwise": {},
+        "no-caller": {},
         "no-case-declarations": {
-            "recommended": true,
-            "name": "no-case-declarations"
-        },
-        "no-catch-shadow": {
-            "deprecated": true,
-            "name": "no-catch-shadow",
-            "replaced": "no-shadow"
+            "recommended": true
         },
         "no-class-assign": {
-            "recommended": true,
-            "name": "no-class-assign"
-        },
-        "no-comma-dangle": {
-            "removed": true,
-            "name": "no-comma-dangle",
-            "replaced": "comma-dangle"
+            "recommended": true
         },
         "no-compare-neg-zero": {
-            "recommended": true,
-            "name": "no-compare-neg-zero"
+            "recommended": true
         },
         "no-cond-assign": {
-            "recommended": true,
-            "name": "no-cond-assign"
+            "recommended": true
         },
         "no-confusing-arrow": {
-            "fixable": true,
-            "name": "no-confusing-arrow"
+            "fixable": true
         },
-        "no-console": {
-            "name": "no-console"
-        },
+        "no-console": {},
         "no-const-assign": {
-            "recommended": true,
-            "name": "no-const-assign"
+            "recommended": true
         },
-        "no-constant-binary-expression": {
-            "name": "no-constant-binary-expression"
-        },
+        "no-constant-binary-expression": {},
         "no-constant-condition": {
-            "recommended": true,
-            "name": "no-constant-condition"
+            "recommended": true
         },
-        "no-constructor-return": {
-            "name": "no-constructor-return"
-        },
-        "no-continue": {
-            "name": "no-continue"
-        },
+        "no-constructor-return": {},
+        "no-continue": {},
         "no-control-regex": {
-            "recommended": true,
-            "name": "no-control-regex"
+            "recommended": true
         },
         "no-debugger": {
-            "recommended": true,
-            "name": "no-debugger"
+            "recommended": true
         },
         "no-delete-var": {
-            "recommended": true,
-            "name": "no-delete-var"
+            "recommended": true
         },
         "no-div-regex": {
-            "fixable": true,
-            "name": "no-div-regex"
+            "fixable": true
         },
         "no-dupe-args": {
-            "recommended": true,
-            "name": "no-dupe-args"
+            "recommended": true
         },
         "no-dupe-class-members": {
-            "recommended": true,
-            "name": "no-dupe-class-members"
+            "recommended": true
         },
         "no-dupe-else-if": {
-            "recommended": true,
-            "name": "no-dupe-else-if"
+            "recommended": true
         },
         "no-dupe-keys": {
-            "recommended": true,
-            "name": "no-dupe-keys"
+            "recommended": true
         },
         "no-duplicate-case": {
-            "recommended": true,
-            "name": "no-duplicate-case"
+            "recommended": true
         },
-        "no-duplicate-imports": {
-            "name": "no-duplicate-imports"
-        },
+        "no-duplicate-imports": {},
         "no-else-return": {
-            "fixable": true,
-            "name": "no-else-return"
+            "fixable": true
         },
         "no-empty": {
-            "recommended": true,
-            "name": "no-empty"
+            "recommended": true
         },
         "no-empty-character-class": {
-            "recommended": true,
-            "name": "no-empty-character-class"
+            "recommended": true
         },
-        "no-empty-class": {
-            "removed": true,
-            "name": "no-empty-class",
-            "replaced": "no-empty-character-class"
-        },
-        "no-empty-function": {
-            "name": "no-empty-function"
-        },
-        "no-empty-label": {
-            "removed": true,
-            "name": "no-empty-label",
-            "replaced": "no-labels"
-        },
+        "no-empty-function": {},
         "no-empty-pattern": {
-            "recommended": true,
-            "name": "no-empty-pattern"
+            "recommended": true
         },
-        "no-eq-null": {
-            "name": "no-eq-null"
-        },
-        "no-eval": {
-            "name": "no-eval"
-        },
+        "no-eq-null": {},
+        "no-eval": {},
         "no-ex-assign": {
-            "recommended": true,
-            "name": "no-ex-assign"
+            "recommended": true
         },
-        "no-extend-native": {
-            "name": "no-extend-native"
-        },
+        "no-extend-native": {},
         "no-extra-bind": {
-            "fixable": true,
-            "name": "no-extra-bind"
+            "fixable": true
         },
         "no-extra-boolean-cast": {
             "recommended": true,
-            "fixable": true,
-            "name": "no-extra-boolean-cast"
+            "fixable": true
         },
         "no-extra-label": {
-            "fixable": true,
-            "name": "no-extra-label"
+            "fixable": true
         },
         "no-extra-parens": {
-            "fixable": true,
-            "name": "no-extra-parens"
+            "fixable": true
         },
         "no-extra-semi": {
             "recommended": true,
-            "fixable": true,
-            "name": "no-extra-semi"
-        },
-        "no-extra-strict": {
-            "removed": true,
-            "name": "no-extra-strict",
-            "replaced": "strict"
+            "fixable": true
         },
         "no-fallthrough": {
-            "recommended": true,
-            "name": "no-fallthrough"
+            "recommended": true
         },
         "no-floating-decimal": {
-            "fixable": true,
-            "name": "no-floating-decimal"
+            "fixable": true
         },
         "no-func-assign": {
-            "recommended": true,
-            "name": "no-func-assign"
+            "recommended": true
         },
         "no-global-assign": {
-            "recommended": true,
-            "name": "no-global-assign"
+            "recommended": true
         },
         "no-implicit-coercion": {
-            "fixable": true,
-            "name": "no-implicit-coercion"
+            "fixable": true
         },
-        "no-implicit-globals": {
-            "name": "no-implicit-globals"
-        },
-        "no-implied-eval": {
-            "name": "no-implied-eval"
-        },
+        "no-implicit-globals": {},
+        "no-implied-eval": {},
         "no-import-assign": {
-            "recommended": true,
-            "name": "no-import-assign"
+            "recommended": true
         },
-        "no-inline-comments": {
-            "name": "no-inline-comments"
-        },
+        "no-inline-comments": {},
         "no-inner-declarations": {
-            "recommended": true,
-            "name": "no-inner-declarations"
+            "recommended": true
         },
         "no-invalid-regexp": {
-            "recommended": true,
-            "name": "no-invalid-regexp"
+            "recommended": true
         },
-        "no-invalid-this": {
-            "name": "no-invalid-this"
-        },
+        "no-invalid-this": {},
         "no-irregular-whitespace": {
-            "recommended": true,
-            "name": "no-irregular-whitespace"
+            "recommended": true
         },
-        "no-iterator": {
-            "name": "no-iterator"
-        },
-        "no-label-var": {
-            "name": "no-label-var"
-        },
-        "no-labels": {
-            "name": "no-labels"
-        },
-        "no-lone-blocks": {
-            "name": "no-lone-blocks"
-        },
+        "no-iterator": {},
+        "no-label-var": {},
+        "no-labels": {},
+        "no-lone-blocks": {},
         "no-lonely-if": {
-            "fixable": true,
-            "name": "no-lonely-if"
+            "fixable": true
         },
-        "no-loop-func": {
-            "name": "no-loop-func"
-        },
+        "no-loop-func": {},
         "no-loss-of-precision": {
-            "recommended": true,
-            "name": "no-loss-of-precision"
+            "recommended": true
         },
-        "no-magic-numbers": {
-            "name": "no-magic-numbers"
-        },
+        "no-magic-numbers": {},
         "no-misleading-character-class": {
-            "recommended": true,
-            "name": "no-misleading-character-class"
+            "recommended": true
         },
-        "no-mixed-operators": {
-            "name": "no-mixed-operators"
-        },
-        "no-mixed-requires": {
-            "deprecated": true,
-            "name": "no-mixed-requires"
-        },
+        "no-mixed-operators": {},
         "no-mixed-spaces-and-tabs": {
-            "recommended": true,
-            "name": "no-mixed-spaces-and-tabs"
+            "recommended": true
         },
-        "no-multi-assign": {
-            "name": "no-multi-assign"
-        },
+        "no-multi-assign": {},
         "no-multi-spaces": {
-            "fixable": true,
-            "name": "no-multi-spaces"
+            "fixable": true
         },
-        "no-multi-str": {
-            "name": "no-multi-str"
-        },
+        "no-multi-str": {},
         "no-multiple-empty-lines": {
-            "fixable": true,
-            "name": "no-multiple-empty-lines"
+            "fixable": true
         },
-        "no-native-reassign": {
-            "deprecated": true,
-            "name": "no-native-reassign",
-            "replaced": "no-global-assign"
-        },
-        "no-negated-condition": {
-            "name": "no-negated-condition"
-        },
-        "no-negated-in-lhs": {
-            "deprecated": true,
-            "name": "no-negated-in-lhs",
-            "replaced": "no-unsafe-negation"
-        },
-        "no-nested-ternary": {
-            "name": "no-nested-ternary"
-        },
-        "no-new": {
-            "name": "no-new"
-        },
-        "no-new-func": {
-            "name": "no-new-func"
-        },
-        "no-new-object": {
-            "name": "no-new-object"
-        },
-        "no-new-require": {
-            "deprecated": true,
-            "name": "no-new-require"
-        },
+        "no-negated-condition": {},
+        "no-nested-ternary": {},
+        "no-new": {},
+        "no-new-func": {},
+        "no-new-object": {},
         "no-new-symbol": {
-            "recommended": true,
-            "name": "no-new-symbol"
+            "recommended": true
         },
-        "no-new-wrappers": {
-            "name": "no-new-wrappers"
-        },
+        "no-new-wrappers": {},
         "no-nonoctal-decimal-escape": {
-            "recommended": true,
-            "name": "no-nonoctal-decimal-escape"
+            "recommended": true
         },
         "no-obj-calls": {
-            "recommended": true,
-            "name": "no-obj-calls"
+            "recommended": true
         },
         "no-octal": {
-            "recommended": true,
-            "name": "no-octal"
+            "recommended": true
         },
-        "no-octal-escape": {
-            "name": "no-octal-escape"
-        },
-        "no-param-reassign": {
-            "name": "no-param-reassign"
-        },
-        "no-path-concat": {
-            "deprecated": true,
-            "name": "no-path-concat"
-        },
-        "no-plusplus": {
-            "name": "no-plusplus"
-        },
-        "no-process-env": {
-            "deprecated": true,
-            "name": "no-process-env"
-        },
-        "no-process-exit": {
-            "deprecated": true,
-            "name": "no-process-exit"
-        },
-        "no-promise-executor-return": {
-            "name": "no-promise-executor-return"
-        },
-        "no-proto": {
-            "name": "no-proto"
-        },
+        "no-octal-escape": {},
+        "no-param-reassign": {},
+        "no-plusplus": {},
+        "no-promise-executor-return": {},
+        "no-proto": {},
         "no-prototype-builtins": {
-            "recommended": true,
-            "name": "no-prototype-builtins"
+            "recommended": true
         },
         "no-redeclare": {
-            "recommended": true,
-            "name": "no-redeclare"
+            "recommended": true
         },
         "no-regex-spaces": {
             "recommended": true,
-            "fixable": true,
-            "name": "no-regex-spaces"
+            "fixable": true
         },
-        "no-reserved-keys": {
-            "removed": true,
-            "name": "no-reserved-keys",
-            "replaced": "quote-props"
-        },
-        "no-restricted-exports": {
-            "name": "no-restricted-exports"
-        },
-        "no-restricted-globals": {
-            "name": "no-restricted-globals"
-        },
-        "no-restricted-imports": {
-            "name": "no-restricted-imports"
-        },
-        "no-restricted-modules": {
-            "deprecated": true,
-            "name": "no-restricted-modules"
-        },
-        "no-restricted-properties": {
-            "name": "no-restricted-properties"
-        },
-        "no-restricted-syntax": {
-            "name": "no-restricted-syntax"
-        },
-        "no-return-assign": {
-            "name": "no-return-assign"
-        },
-        "no-return-await": {
-            "name": "no-return-await"
-        },
-        "no-script-url": {
-            "name": "no-script-url"
-        },
+        "no-restricted-exports": {},
+        "no-restricted-globals": {},
+        "no-restricted-imports": {},
+        "no-restricted-properties": {},
+        "no-restricted-syntax": {},
+        "no-return-assign": {},
+        "no-return-await": {},
+        "no-script-url": {},
         "no-self-assign": {
-            "recommended": true,
-            "name": "no-self-assign"
+            "recommended": true
         },
-        "no-self-compare": {
-            "name": "no-self-compare"
-        },
-        "no-sequences": {
-            "name": "no-sequences"
-        },
+        "no-self-compare": {},
+        "no-sequences": {},
         "no-setter-return": {
-            "recommended": true,
-            "name": "no-setter-return"
+            "recommended": true
         },
-        "no-shadow": {
-            "name": "no-shadow"
-        },
+        "no-shadow": {},
         "no-shadow-restricted-names": {
-            "recommended": true,
-            "name": "no-shadow-restricted-names"
-        },
-        "no-space-before-semi": {
-            "removed": true,
-            "name": "no-space-before-semi",
-            "replaced": "semi-spacing"
-        },
-        "no-spaced-func": {
-            "deprecated": true,
-            "name": "no-spaced-func",
-            "replaced": "func-call-spacing"
+            "recommended": true
         },
         "no-sparse-arrays": {
-            "recommended": true,
-            "name": "no-sparse-arrays"
+            "recommended": true
         },
-        "no-sync": {
-            "deprecated": true,
-            "name": "no-sync"
-        },
-        "no-tabs": {
-            "name": "no-tabs"
-        },
-        "no-template-curly-in-string": {
-            "name": "no-template-curly-in-string"
-        },
-        "no-ternary": {
-            "name": "no-ternary"
-        },
+        "no-tabs": {},
+        "no-template-curly-in-string": {},
+        "no-ternary": {},
         "no-this-before-super": {
-            "recommended": true,
-            "name": "no-this-before-super"
+            "recommended": true
         },
-        "no-throw-literal": {
-            "name": "no-throw-literal"
-        },
+        "no-throw-literal": {},
         "no-trailing-spaces": {
-            "fixable": true,
-            "name": "no-trailing-spaces"
+            "fixable": true
         },
         "no-undef": {
-            "recommended": true,
-            "name": "no-undef"
+            "recommended": true
         },
         "no-undef-init": {
-            "fixable": true,
-            "name": "no-undef-init"
+            "fixable": true
         },
-        "no-undefined": {
-            "name": "no-undefined"
-        },
-        "no-underscore-dangle": {
-            "name": "no-underscore-dangle"
-        },
+        "no-undefined": {},
+        "no-underscore-dangle": {},
         "no-unexpected-multiline": {
-            "recommended": true,
-            "name": "no-unexpected-multiline"
+            "recommended": true
         },
-        "no-unmodified-loop-condition": {
-            "name": "no-unmodified-loop-condition"
-        },
+        "no-unmodified-loop-condition": {},
         "no-unneeded-ternary": {
-            "fixable": true,
-            "name": "no-unneeded-ternary"
+            "fixable": true
         },
         "no-unreachable": {
-            "recommended": true,
-            "name": "no-unreachable"
+            "recommended": true
         },
-        "no-unreachable-loop": {
-            "name": "no-unreachable-loop"
-        },
+        "no-unreachable-loop": {},
         "no-unsafe-finally": {
-            "recommended": true,
-            "name": "no-unsafe-finally"
+            "recommended": true
         },
         "no-unsafe-negation": {
-            "recommended": true,
-            "name": "no-unsafe-negation"
+            "recommended": true
         },
         "no-unsafe-optional-chaining": {
-            "recommended": true,
-            "name": "no-unsafe-optional-chaining"
+            "recommended": true
         },
-        "no-unused-expressions": {
-            "name": "no-unused-expressions"
-        },
+        "no-unused-expressions": {},
         "no-unused-labels": {
             "recommended": true,
-            "fixable": true,
-            "name": "no-unused-labels"
+            "fixable": true
         },
-        "no-unused-private-class-members": {
-            "name": "no-unused-private-class-members"
-        },
+        "no-unused-private-class-members": {},
         "no-unused-vars": {
-            "recommended": true,
-            "name": "no-unused-vars"
+            "recommended": true
         },
-        "no-use-before-define": {
-            "name": "no-use-before-define"
-        },
+        "no-use-before-define": {},
         "no-useless-backreference": {
-            "recommended": true,
-            "name": "no-useless-backreference"
+            "recommended": true
         },
-        "no-useless-call": {
-            "name": "no-useless-call"
-        },
+        "no-useless-call": {},
         "no-useless-catch": {
-            "recommended": true,
-            "name": "no-useless-catch"
+            "recommended": true
         },
         "no-useless-computed-key": {
-            "fixable": true,
-            "name": "no-useless-computed-key"
+            "fixable": true
         },
-        "no-useless-concat": {
-            "name": "no-useless-concat"
-        },
-        "no-useless-constructor": {
-            "name": "no-useless-constructor"
-        },
+        "no-useless-concat": {},
+        "no-useless-constructor": {},
         "no-useless-escape": {
-            "recommended": true,
-            "name": "no-useless-escape"
+            "recommended": true
         },
         "no-useless-rename": {
-            "fixable": true,
-            "name": "no-useless-rename"
+            "fixable": true
         },
         "no-useless-return": {
-            "fixable": true,
-            "name": "no-useless-return"
+            "fixable": true
         },
         "no-var": {
-            "fixable": true,
-            "name": "no-var"
+            "fixable": true
         },
-        "no-void": {
-            "name": "no-void"
-        },
-        "no-warning-comments": {
-            "name": "no-warning-comments"
-        },
+        "no-void": {},
+        "no-warning-comments": {},
         "no-whitespace-before-property": {
-            "fixable": true,
-            "name": "no-whitespace-before-property"
+            "fixable": true
         },
         "no-with": {
-            "recommended": true,
-            "name": "no-with"
-        },
-        "no-wrap-func": {
-            "removed": true,
-            "name": "no-wrap-func",
-            "replaced": "no-extra-parens"
+            "recommended": true
         },
         "nonblock-statement-body-position": {
-            "fixable": true,
-            "name": "nonblock-statement-body-position"
+            "fixable": true
         },
         "object-curly-newline": {
-            "fixable": true,
-            "name": "object-curly-newline"
+            "fixable": true
         },
         "object-curly-spacing": {
-            "fixable": true,
-            "name": "object-curly-spacing"
+            "fixable": true
         },
         "object-property-newline": {
-            "fixable": true,
-            "name": "object-property-newline"
+            "fixable": true
         },
         "object-shorthand": {
-            "fixable": true,
-            "name": "object-shorthand"
+            "fixable": true
         },
         "one-var": {
-            "fixable": true,
-            "name": "one-var"
+            "fixable": true
         },
         "one-var-declaration-per-line": {
-            "fixable": true,
-            "name": "one-var-declaration-per-line"
+            "fixable": true
         },
         "operator-assignment": {
-            "fixable": true,
-            "name": "operator-assignment"
+            "fixable": true
         },
         "operator-linebreak": {
-            "fixable": true,
-            "name": "operator-linebreak"
+            "fixable": true
         },
         "padded-blocks": {
-            "fixable": true,
-            "name": "padded-blocks"
+            "fixable": true
         },
         "padding-line-between-statements": {
-            "fixable": true,
-            "name": "padding-line-between-statements"
+            "fixable": true
         },
         "prefer-arrow-callback": {
-            "fixable": true,
-            "name": "prefer-arrow-callback"
+            "fixable": true
         },
         "prefer-const": {
-            "fixable": true,
-            "name": "prefer-const"
+            "fixable": true
         },
         "prefer-destructuring": {
-            "fixable": true,
-            "name": "prefer-destructuring"
+            "fixable": true
         },
         "prefer-exponentiation-operator": {
-            "fixable": true,
-            "name": "prefer-exponentiation-operator"
+            "fixable": true
         },
-        "prefer-named-capture-group": {
-            "name": "prefer-named-capture-group"
-        },
+        "prefer-named-capture-group": {},
         "prefer-numeric-literals": {
-            "fixable": true,
-            "name": "prefer-numeric-literals"
+            "fixable": true
         },
         "prefer-object-has-own": {
-            "fixable": true,
-            "name": "prefer-object-has-own"
+            "fixable": true
         },
         "prefer-object-spread": {
-            "fixable": true,
-            "name": "prefer-object-spread"
+            "fixable": true
         },
-        "prefer-promise-reject-errors": {
-            "name": "prefer-promise-reject-errors"
-        },
-        "prefer-reflect": {
-            "deprecated": true,
-            "name": "prefer-reflect"
-        },
-        "prefer-regex-literals": {
-            "name": "prefer-regex-literals"
-        },
-        "prefer-rest-params": {
-            "name": "prefer-rest-params"
-        },
-        "prefer-spread": {
-            "name": "prefer-spread"
-        },
+        "prefer-promise-reject-errors": {},
+        "prefer-regex-literals": {},
+        "prefer-rest-params": {},
+        "prefer-spread": {},
         "prefer-template": {
-            "fixable": true,
-            "name": "prefer-template"
+            "fixable": true
         },
         "quote-props": {
-            "fixable": true,
-            "name": "quote-props"
+            "fixable": true
         },
         "quotes": {
-            "fixable": true,
-            "name": "quotes"
+            "fixable": true
         },
-        "radix": {
-            "name": "radix"
-        },
-        "require-atomic-updates": {
-            "name": "require-atomic-updates"
-        },
-        "require-await": {
-            "name": "require-await"
-        },
-        "require-jsdoc": {
-            "deprecated": true,
-            "name": "require-jsdoc"
-        },
-        "require-unicode-regexp": {
-            "name": "require-unicode-regexp"
-        },
+        "radix": {},
+        "require-atomic-updates": {},
+        "require-await": {},
+        "require-unicode-regexp": {},
         "require-yield": {
-            "recommended": true,
-            "name": "require-yield"
+            "recommended": true
         },
         "rest-spread-spacing": {
-            "fixable": true,
-            "name": "rest-spread-spacing"
+            "fixable": true
         },
         "semi": {
-            "fixable": true,
-            "name": "semi"
+            "fixable": true
         },
         "semi-spacing": {
-            "fixable": true,
-            "name": "semi-spacing"
+            "fixable": true
         },
         "semi-style": {
-            "fixable": true,
-            "name": "semi-style"
+            "fixable": true
         },
         "sort-imports": {
-            "fixable": true,
-            "name": "sort-imports"
+            "fixable": true
         },
-        "sort-keys": {
-            "name": "sort-keys"
-        },
+        "sort-keys": {},
         "sort-vars": {
-            "fixable": true,
-            "name": "sort-vars"
-        },
-        "space-after-function-name": {
-            "removed": true,
-            "name": "space-after-function-name",
-            "replaced": "space-before-function-paren"
-        },
-        "space-after-keywords": {
-            "removed": true,
-            "name": "space-after-keywords",
-            "replaced": "keyword-spacing"
+            "fixable": true
         },
         "space-before-blocks": {
-            "fixable": true,
-            "name": "space-before-blocks"
+            "fixable": true
         },
         "space-before-function-paren": {
-            "fixable": true,
-            "name": "space-before-function-paren"
-        },
-        "space-before-function-parentheses": {
-            "removed": true,
-            "name": "space-before-function-parentheses",
-            "replaced": "space-before-function-paren"
-        },
-        "space-before-keywords": {
-            "removed": true,
-            "name": "space-before-keywords",
-            "replaced": "keyword-spacing"
-        },
-        "space-in-brackets": {
-            "removed": true,
-            "name": "space-in-brackets",
-            "replaced": "object-curly-spacing array-bracket-spacing"
+            "fixable": true
         },
         "space-in-parens": {
-            "fixable": true,
-            "name": "space-in-parens"
+            "fixable": true
         },
         "space-infix-ops": {
-            "fixable": true,
-            "name": "space-infix-ops"
-        },
-        "space-return-throw-case": {
-            "removed": true,
-            "name": "space-return-throw-case",
-            "replaced": "keyword-spacing"
+            "fixable": true
         },
         "space-unary-ops": {
-            "fixable": true,
-            "name": "space-unary-ops"
-        },
-        "space-unary-word-ops": {
-            "removed": true,
-            "name": "space-unary-word-ops",
-            "replaced": "space-unary-ops"
+            "fixable": true
         },
         "spaced-comment": {
-            "fixable": true,
-            "name": "spaced-comment"
-        },
-        "spaced-line-comment": {
-            "removed": true,
-            "name": "spaced-line-comment",
-            "replaced": "spaced-comment"
+            "fixable": true
         },
         "strict": {
-            "fixable": true,
-            "name": "strict"
+            "fixable": true
         },
         "switch-colon-spacing": {
-            "fixable": true,
-            "name": "switch-colon-spacing"
+            "fixable": true
         },
-        "symbol-description": {
-            "name": "symbol-description"
-        },
+        "symbol-description": {},
         "template-curly-spacing": {
-            "fixable": true,
-            "name": "template-curly-spacing"
+            "fixable": true
         },
         "template-tag-spacing": {
-            "fixable": true,
-            "name": "template-tag-spacing"
+            "fixable": true
         },
         "unicode-bom": {
-            "fixable": true,
-            "name": "unicode-bom"
+            "fixable": true
         },
         "use-isnan": {
-            "recommended": true,
-            "name": "use-isnan"
-        },
-        "valid-jsdoc": {
-            "deprecated": true,
-            "name": "valid-jsdoc"
+            "recommended": true
         },
         "valid-typeof": {
-            "recommended": true,
-            "name": "valid-typeof"
+            "recommended": true
         },
-        "vars-on-top": {
-            "name": "vars-on-top"
-        },
+        "vars-on-top": {},
         "wrap-iife": {
-            "fixable": true,
-            "name": "wrap-iife"
+            "fixable": true
         },
         "wrap-regex": {
-            "fixable": true,
-            "name": "wrap-regex"
+            "fixable": true
         },
         "yield-star-spacing": {
-            "fixable": true,
-            "name": "yield-star-spacing"
+            "fixable": true
         },
         "yoda": {
-            "fixable": true,
-            "name": "yoda"
+            "fixable": true
         }
     }
 }

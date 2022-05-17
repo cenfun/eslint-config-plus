@@ -1,10 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const EC = require('eight-colors');
-const PCR = require('puppeteer-chromium-resolver');
 
 const getMarkDownTable = function(d) {
-    //console.log(d);
+    // console.log(d);
     const lines = [];
 
     const header = [''];
@@ -15,7 +14,7 @@ const getMarkDownTable = function(d) {
     lines.push(header.join('|'));
 
     const line = [''];
-    d.columns.forEach(c => {
+    d.columns.forEach((c) => {
         if (c.align === 'right') {
             line.push(`${''.padEnd(c.width - 1, '-')}:`);
         } else {
@@ -41,121 +40,6 @@ const getMarkDownTable = function(d) {
     return lines.join('\r\n');
 };
 
-const loadRules = async () => {
-
-    const option = {
-
-    };
-    const stats = await PCR(option);
-    const browser = await stats.puppeteer.launch({
-        headless: false,
-        args: ['--no-sandbox'],
-        executablePath: stats.executablePath
-    }).catch(function(error) {
-        console.log(error);
-    });
-    const page = await browser.newPage();
-
-    await page.goto('https://eslint.org/docs/rules/').catch((e) => {
-        EC.logRed(e);
-    });
-
-    const list = await page.evaluate(() => {
-        const ls = [];
-
-        //rules
-        const tables = document.querySelectorAll('table.rule-list');
-        Array.from(tables).forEach(table => {
-            const trs = table.querySelectorAll('tr');
-            Array.from(trs).forEach(tr => {
-                const item = {};
-                const tds = tr.querySelectorAll('td');
-                Array.from(tds).forEach((td, i) => {
-                    const v = (`${td.innerText}`).trim();
-                    if (i === 0 && v) {
-                        item.recommended = true;
-                        return;
-                    }
-                    if (i === 1 && v) {
-                        item.fixable = true;
-                        return;
-                    }
-                    if (i === 3) {
-                        item.name = v;
-                    }
-                });
-                ls.push(item);
-            });
-        });
-
-        //Deprecated
-        const deprecated = document.querySelector('.deprecated-rules');
-        const deprecatedTrs = deprecated.querySelectorAll('tr');
-        Array.from(deprecatedTrs).forEach(tr => {
-            const item = {
-                deprecated: true
-            };
-            const tds = tr.querySelectorAll('td');
-            let valid;
-            Array.from(tds).forEach((td, i) => {
-                const v = (`${td.innerText}`).trim();
-                if (i === 0 && v) {
-                    item.name = v;
-                    valid = true;
-                    return;
-                }
-                if (i === 1 && v && v !== '(no replacement)') {
-                    item.replaced = v;
-                }
-            });
-            if (valid) {
-                ls.push(item);
-            }
-        });
-
-        const removed = document.querySelector('.removed-rules');
-        const removedTrs = removed.querySelectorAll('tr');
-        Array.from(removedTrs).forEach(tr => {
-            const item = {
-                removed: true
-            };
-            const tds = tr.querySelectorAll('td');
-            let valid;
-            Array.from(tds).forEach((td, i) => {
-                const v = (`${td.innerText}`).trim();
-                if (i === 0 && v) {
-                    item.name = v;
-                    valid = true;
-                    return;
-                }
-                if (i === 1 && v && v !== '(no replacement)') {
-                    item.replaced = v;
-                }
-            });
-            if (valid) {
-                ls.push(item);
-            }
-        });
-
-        return ls;
-    });
-
-    //console.log(list);
-
-    await page.close();
-    await browser.close();
-    const rules = {};
-    list.sort((a, b) => {
-        const au = a.name.toUpperCase();
-        const bu = b.name.toUpperCase();
-        return au > bu ? 1 : -1;
-    });
-
-    list.forEach(item => {
-        rules[item.name] = item;
-    });
-    return rules;
-};
 
 const checkRules = (metadata) => {
     const allRules = metadata.rules;
@@ -163,71 +47,36 @@ const checkRules = (metadata) => {
 
     const myRules = myEslint.rules;
 
-    //check deprecated/removed/recommended
+    const allList = [];
+    // check fixable
     const fixableList = [];
     const normalList = [];
-    Object.keys(myRules).forEach(name => {
-        const rule = allRules[name];
-        if (!rule) {
-            //no plugin rules
-            if (name.indexOf('/') === -1) {
-                EC.logRed(`not found: ${name}`);
-            }
-            return;
-        }
-        if (rule.deprecated) {
-            EC.logRed(`deprecated: ${name}`);
-            return;
-        }
-        if (rule.removed) {
-            EC.logRed(`removed: ${name}`);
-            return;
-        }
-        if (rule.recommended) {
-            EC.logRed(`recommended: ${name}`);
-            return;
-        }
-        if (rule.fixable) {
-            fixableList.push(name);
-        } else {
-            normalList.push(name);
-        }
-    });
+    Object.keys(allRules).forEach((key) => {
+        const rule = allRules[key];
+        rule.name = key;
 
-    const allList = [];
-    //check fixable
-    const fixableMissingList = [];
-    const normalMissingList = [];
-    Object.keys(allRules).forEach(name => {
-        const rule = allRules[name];
-        
-        if (rule.deprecated || rule.removed) {
-            return;
-        }
         allList.push(rule);
 
         if (rule.recommended) {
             return;
         }
 
-        const item = myRules[name];
+        const item = myRules[key];
         if (!item) {
             if (rule.fixable) {
-                fixableMissingList.push(name);
+                fixableList.push(key);
             } else {
-                normalMissingList.push(name);
+                normalList.push(key);
             }
         }
     });
 
-    
-    fixableMissingList.forEach((name, i) => {
-        EC.logRed(`missing fixable: ${i + 1}: ${name}`);
+    fixableList.forEach((name, i) => {
+        EC.logRed(`undefined fixable: ${i + 1}: ${name}`);
     });
-
-
-    normalMissingList.forEach((name, i) => {
-        EC.logRed(`missing normal: ${i + 1}: ${name}`);
+    console.log('');
+    normalList.forEach((name, i) => {
+        EC.logRed(`undefined normal: ${i + 1}: ${name}`);
     });
 
     const recommendedIcon = '✔';
@@ -242,7 +91,7 @@ const checkRules = (metadata) => {
 
         w = Math.max(w, item.name.length);
 
-        //console.log(item);
+        // console.log(item);
         const name = `[${item.name}](https://eslint.org/docs/rules/${item.name})`;
         const recommended = item.recommended ? recommendedIcon : '';
         const fixable = item.fixable ? fixableIcon : '';
@@ -252,7 +101,7 @@ const checkRules = (metadata) => {
             v = JSON.stringify(v);
         }
 
-        //$\\color{red}{×}$
+        // $\\color{red}{×}$
         const plus = v || recommended || '';
 
         if (!plus) {
@@ -261,6 +110,8 @@ const checkRules = (metadata) => {
 
         return [i + 1, name, recommended, fixable, plus];
     });
+
+    EC.logRed(`undefined rules: ${unset}`);
 
     const readmeTable = getMarkDownTable({
         columns: [{
@@ -290,35 +141,44 @@ const checkRules = (metadata) => {
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
 
-    EC.logRed(`unset: ${unset}`);
-
 };
 
-const start = async () => {
+const start = () => {
 
     const date = new Date().toLocaleDateString();
     
-    const rulesPath = path.resolve(__dirname, '../lib/metadata.json');
+    const rules = {};
 
-    if (fs.existsSync(rulesPath)) {
-        const json = require(rulesPath);
-        if (json && json.date === date) {
-            return checkRules(json);
+    const builtInRules = require('../node_modules/eslint/lib/rules');
+
+    builtInRules.forEach(function(rule, ruleId) {
+        const meta = rule.meta;
+        if (meta.deprecated) {
+            return;
         }
-    }
-    
-    
-    const rules = await loadRules();
+        const info = {};
+        if (meta.docs.recommended) {
+            info.recommended = true;
+        }
+        if (meta.fixable) {
+            info.fixable = true;
+        }
+        rules[ruleId] = info;
+    });
 
+    // console.log(rules);
+    
     const metadata = {
         date,
         rules
     };
 
+    const rulesPath = path.resolve(__dirname, '../lib/metadata.json');
     fs.writeFileSync(rulesPath, JSON.stringify(metadata, null, 4));
     EC.logGreen(`eslint rules saved: ${rulesPath}`);
     
-    return checkRules(metadata);
+    checkRules(metadata);
+    
 };
 
 

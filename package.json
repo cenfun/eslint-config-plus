@@ -16,7 +16,6 @@
   "license": "MIT",
   "devDependencies": {
     "eight-colors": "^1.0.1",
-    "eslint": "^8.15.0",
-    "puppeteer-chromium-resolver": "^14.0.0"
+    "eslint": "^8.15.0"
   }
 }
