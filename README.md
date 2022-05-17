@@ -20,7 +20,8 @@ module.exports = {
 
 ## Rules (2022/5/17)
 Recommended: ✔  Fixable: ✎  
-|   |Rule                            |  |  |Plus      
+Undefined in plus: 63  
+|   |rule                            |  |  |defined in plus
 |--:|--------------------------------|--|--|----------
 |  1|[accessor-pairs](https://eslint.org/docs/rules/accessor-pairs)|  |  |          
 |  2|[array-bracket-newline](https://eslint.org/docs/rules/array-bracket-newline)|  |✎ |["error","consistent"]

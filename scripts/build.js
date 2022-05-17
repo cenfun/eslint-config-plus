@@ -78,6 +78,7 @@ const checkRules = (metadata) => {
     normalList.forEach((name, i) => {
         EC.logRed(`undefined normal: ${i + 1}: ${name}`);
     });
+    console.log('');
 
     const recommendedIcon = '✔';
     const fixableIcon = '✎';
@@ -111,7 +112,8 @@ const checkRules = (metadata) => {
         return [i + 1, name, recommended, fixable, plus];
     });
 
-    EC.logRed(`undefined rules: ${unset}`);
+    const total = `Undefined in plus: ${unset}  \n`;
+    EC.logRed(total);
 
     const readmeTable = getMarkDownTable({
         columns: [{
@@ -119,7 +121,7 @@ const checkRules = (metadata) => {
             width: 3,
             align: 'right'
         }, {
-            name: 'Rule',
+            name: 'rule',
             width: w
         }, {
             name: '',
@@ -128,7 +130,7 @@ const checkRules = (metadata) => {
             name: '',
             width: 2
         }, {
-            name: 'Plus',
+            name: 'defined in plus',
             width: 10
         }],
         rows
@@ -136,7 +138,7 @@ const checkRules = (metadata) => {
 
     let readmeContent = fs.readFileSync(path.resolve(__dirname, 'README.md')).toString('utf-8');
     readmeContent = readmeContent.replace('{replace_holder_date}', metadata.date);
-    readmeContent = readmeContent.replace('{replace_holder_rules}', legend + readmeTable);
+    readmeContent = readmeContent.replace('{replace_holder_rules}', legend + total + readmeTable);
     const readmePath = path.resolve(__dirname, '../README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
@@ -175,7 +177,7 @@ const start = () => {
 
     const rulesPath = path.resolve(__dirname, '../lib/metadata.json');
     fs.writeFileSync(rulesPath, JSON.stringify(metadata, null, 4));
-    EC.logGreen(`eslint rules saved: ${rulesPath}`);
+    EC.logGreen(`generated metadata: ${rulesPath}`);
     
     checkRules(metadata);
     
