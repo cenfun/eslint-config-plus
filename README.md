@@ -153,7 +153,7 @@ Recommended: ✔  Fixable: ✎
 |129|[no-loss-of-precision](https://eslint.org/docs/rules/no-loss-of-precision)|✔ |  |✔         
 |130|[no-magic-numbers](https://eslint.org/docs/rules/no-magic-numbers)|  |  |          
 |131|[no-misleading-character-class](https://eslint.org/docs/rules/no-misleading-character-class)|✔ |  |✔         
-|132|[no-mixed-operators](https://eslint.org/docs/rules/no-mixed-operators)|  |  |["error",{"groups":[["&&","||"]]}]
+|132|[no-mixed-operators](https://eslint.org/docs/rules/no-mixed-operators)|  |  |["error",{"groups":[["&&","\|\|"]]}]
 |133|[no-mixed-spaces-and-tabs](https://eslint.org/docs/rules/no-mixed-spaces-and-tabs)|✔ |  |✔         
 |134|[no-multi-assign](https://eslint.org/docs/rules/no-multi-assign)|  |  |"error"   
 |135|[no-multi-spaces](https://eslint.org/docs/rules/no-multi-spaces)|  |✎ |"error"   

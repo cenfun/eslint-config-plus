@@ -28,7 +28,7 @@ const getMarkDownTable = function(d) {
     d.rows.forEach((r) => {
         const row = [''];
         d.columns.forEach((c, i) => {
-            const s = `${r[i]}`;
+            const s = `${r[i]}`.split('|').join('\\|');
             if (c.align === 'right') {
                 row.push(s.padStart(c.width, ' '));
             } else {
