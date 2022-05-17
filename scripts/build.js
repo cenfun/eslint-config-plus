@@ -200,10 +200,16 @@ const checkRules = (metadata) => {
     const normalMissingList = [];
     Object.keys(allRules).forEach(name => {
         const rule = allRules[name];
-        allList.push(rule);
-        if (rule.recommended || rule.deprecated || rule.removed) {
+        
+        if (rule.deprecated || rule.removed) {
             return;
         }
+        allList.push(rule);
+
+        if (rule.recommended) {
+            return;
+        }
+
         const item = myRules[name];
         if (!item) {
             if (rule.fixable) {
@@ -229,6 +235,7 @@ const checkRules = (metadata) => {
 
     const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  \n`;
 
+    let unset = 0;
     let w = 0;
 
     const rows = allList.map((item, i) => {
@@ -245,7 +252,12 @@ const checkRules = (metadata) => {
             v = JSON.stringify(v);
         }
 
+        //$\\color{red}{×}$
         const plus = v || recommended || '';
+
+        if (!plus) {
+            unset += 1;
+        }
 
         return [i + 1, name, recommended, fixable, plus];
     });
@@ -277,6 +289,8 @@ const checkRules = (metadata) => {
     const readmePath = path.resolve(__dirname, '../README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
+
+    EC.logRed(`unset: ${unset}`);
 
 };
 
