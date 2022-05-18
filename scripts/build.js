@@ -56,6 +56,7 @@ const checkRules = (metadata, recommendedRules) => {
     const fixableIcon = '🔧';
     const undefinedIcon = '❌';
 
+    let d = 0;
     let u = 0;
     let w = 0;
 
@@ -73,12 +74,14 @@ const checkRules = (metadata, recommendedRules) => {
         let v = myRules[key];
         if (v) {
             v = JSON.stringify(v);
+            d += 1;
             if (item.recommended) {
                 EC.logYellow(`Overwriting recommended ${key}: ${v}`);
             }
         } else if (item.recommended) {
             v = recommendedRules[key];
             if (v) {
+                d += 1;
                 v = JSON.stringify(v);
             }
         } else {
@@ -90,10 +93,9 @@ const checkRules = (metadata, recommendedRules) => {
         return [i + 1, name, recommended, fixable, v];
     });
 
-    const undefinedRules = `Undefined in plus: ${undefinedIcon} ${u}`;
-    EC.logRed(undefinedRules);
+    const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  \n`;
 
-    const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  ${undefinedRules}  \n`;
+    EC.logRed(`Undefined in plus: ${u} ${undefinedIcon}`);
 
     const rulesTable = getMarkDownTable({
         columns: [{
@@ -101,7 +103,7 @@ const checkRules = (metadata, recommendedRules) => {
             width: 3,
             align: 'right'
         }, {
-            name: 'Rule',
+            name: `Rules (Total: ${rows.length})`,
             width: w
         }, {
             name: '',
@@ -112,7 +114,7 @@ const checkRules = (metadata, recommendedRules) => {
             width: 2,
             align: 'center'
         }, {
-            name: 'Defined in plus',
+            name: `Defined in plus ${d} (Undefined: ${u} ${undefinedIcon})`,
             width: 10
         }],
         rows
