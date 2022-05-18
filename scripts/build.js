@@ -50,83 +50,53 @@ const checkRules = (metadata) => {
 
     const myRules = myEslint.rules;
 
-    const allList = [];
-    // check fixable
-    const fixableList = [];
-    const normalList = [];
-    Object.keys(allRules).forEach((key) => {
-        const rule = allRules[key];
-        rule.name = key;
-
-        allList.push(rule);
-
-        if (rule.recommended) {
-            return;
-        }
-
-        const item = myRules[key];
-        if (!item) {
-            if (rule.fixable) {
-                fixableList.push(key);
-            } else {
-                normalList.push(key);
-            }
-        }
-    });
-
-    fixableList.forEach((name, i) => {
-        EC.logRed(`undefined fixable: ${i + 1}: ${name}`);
-    });
-    console.log('');
-    normalList.forEach((name, i) => {
-        EC.logRed(`undefined normal: ${i + 1}: ${name}`);
-    });
-    console.log('');
-
-    const info = `Base on eslint@${metadata.version} (${metadata.date})  \n`;
+    const info = `Base on [eslint@${metadata.version}](https://github.com/eslint/eslint) (${metadata.date})  \n`;
 
     const recommendedIcon = '✔';
     const fixableIcon = '🔧';
+    const undefinedIcon = '❌';
 
-    const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  \n`;
-
-    let unset = 0;
+    let u = 0;
     let w = 0;
 
-    const rows = allList.map((item, i) => {
+    const rows = Object.keys(allRules).map((key, i) => {
 
-        w = Math.max(w, item.name.length);
+        const item = allRules[key];
+
+        w = Math.max(w, key.length);
 
         // console.log(item);
-        const name = `[${item.name}](https://eslint.org/docs/rules/${item.name})`;
+        const name = `[${key}](https://eslint.org/docs/rules/${key})`;
         const recommended = item.recommended ? recommendedIcon : '';
         const fixable = item.fixable ? fixableIcon : '';
 
-        let v = myRules[item.name];
+        let v = myRules[key];
         if (v) {
-            v = JSON.stringify(v);
+            v = `\`${JSON.stringify(v)}\``;
         }
 
-        // $\\color{red}{×}$
-        const plus = v || recommended || '';
+        const plus = v || recommended || undefinedIcon;
 
-        if (!plus) {
-            unset += 1;
+        if (plus === undefinedIcon) {
+            u += 1;
+            EC.logRed(`undefined: ${u}: ${key}`);
         }
 
         return [i + 1, name, recommended, fixable, plus];
     });
 
-    const total = `Undefined in plus: ${unset}  \n`;
-    EC.logRed(total);
+    const undefinedRules = `Undefined in plus: ${undefinedIcon} ${u}`;
+    EC.logRed(undefinedRules);
 
-    const readmeTable = getMarkDownTable({
+    const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  ${undefinedRules}  \n`;
+
+    const rulesTable = getMarkDownTable({
         columns: [{
             name: '',
             width: 3,
             align: 'right'
         }, {
-            name: 'rule',
+            name: 'Rule',
             width: w,
             align: 'left'
         }, {
@@ -136,7 +106,7 @@ const checkRules = (metadata) => {
             name: '',
             width: 2
         }, {
-            name: 'defined in plus',
+            name: 'Defined in plus',
             width: 10,
             align: 'left'
         }],
@@ -144,7 +114,7 @@ const checkRules = (metadata) => {
     });
 
     let readmeContent = fs.readFileSync(path.resolve(__dirname, 'README.md')).toString('utf-8');
-    readmeContent = readmeContent.replace('{replace_holder_rules}', info + legend + total + readmeTable);
+    readmeContent = readmeContent.replace('{replace_holder_rules}', info + legend + rulesTable);
     const readmePath = path.resolve(__dirname, '../README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
