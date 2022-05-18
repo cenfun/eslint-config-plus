@@ -18,5 +18,8 @@ module.exports = {
 };
 ```
 
-## Rules
+# Rules
 {replace_holder_rules}
+
+# Changelog
+[CHANGELOG.md](CHANGELOG.md)

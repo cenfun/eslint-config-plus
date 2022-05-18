@@ -18,7 +18,7 @@ module.exports = {
 };
 ```
 
-## Rules
+# Rules
 Base on [eslint@8.15.0](https://github.com/eslint/eslint) (2022/5/18)  
 Recommended: ✔  Fixable: 🔧  
 |   |Rules: 264                      |  |  |Defined in plus: 198 (Undefined: 66 ❌)
@@ -287,3 +287,6 @@ Recommended: ✔  Fixable: 🔧
 |262|[wrap-regex](https://eslint.org/docs/rules/wrap-regex)|  |🔧|"error"   
 |263|[yield-star-spacing](https://eslint.org/docs/rules/yield-star-spacing)|  |🔧|❌         
 |264|[yoda](https://eslint.org/docs/rules/yoda)|  |🔧|❌         
+
+# Changelog
+[CHANGELOG.md](CHANGELOG.md)

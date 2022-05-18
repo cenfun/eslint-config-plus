@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-plus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "eslint-config-plus",
   "main": "lib/index.js",
   "scripts": {
@@ -17,5 +17,6 @@
   "devDependencies": {
     "eight-colors": "^1.0.1",
     "eslint": "^8.15.0"
-  }
+  },
+  "dependencies": {}
 }
