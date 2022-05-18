@@ -86,7 +86,7 @@ const checkRules = (metadata) => {
     const info = `Base on eslint@${metadata.version} (${metadata.date})  \n`;
 
     const recommendedIcon = '✔';
-    const fixableIcon = '✎';
+    const fixableIcon = '🔧';
 
     const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  \n`;
 
