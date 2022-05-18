@@ -44,7 +44,7 @@ const getMarkDownTable = function(d) {
 };
 
 
-const checkRules = (metadata) => {
+const checkRules = (metadata, recommendedRules) => {
     const allRules = metadata.rules;
     const myEslint = require(path.resolve(__dirname, '../lib/index.js'));
 
@@ -73,16 +73,21 @@ const checkRules = (metadata) => {
         let v = myRules[key];
         if (v) {
             v = JSON.stringify(v);
-        }
-
-        const plus = v || recommended || undefinedIcon;
-
-        if (plus === undefinedIcon) {
+            if (item.recommended) {
+                EC.logYellow(`Overwriting recommended ${key}: ${v}`);
+            }
+        } else if (item.recommended) {
+            v = recommendedRules[key];
+            if (v) {
+                v = JSON.stringify(v);
+            }
+        } else {
+            v = undefinedIcon;
             u += 1;
-            EC.logRed(`undefined: ${u}: ${key}`);
+            EC.logRed(`Undefined: ${u}: ${key} ${recommended}${fixable}`);
         }
 
-        return [i + 1, name, recommended, fixable, plus];
+        return [i + 1, name, recommended, fixable, v];
     });
 
     const undefinedRules = `Undefined in plus: ${undefinedIcon} ${u}`;
@@ -129,6 +134,8 @@ const start = () => {
 
     const builtInRules = require('../node_modules/eslint/lib/rules');
 
+    const recommendedRules = require('../node_modules/eslint/conf/eslint-recommended.js').rules;
+
     builtInRules.forEach(function(rule, ruleId) {
         const meta = rule.meta;
         if (meta.deprecated) {
@@ -158,7 +165,7 @@ const start = () => {
     fs.writeFileSync(rulesPath, JSON.stringify(metadata, null, 4));
     EC.logGreen(`generated metadata: ${rulesPath}`);
     
-    checkRules(metadata);
+    checkRules(metadata, recommendedRules);
     
 };
 
