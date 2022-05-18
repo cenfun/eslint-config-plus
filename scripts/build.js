@@ -103,7 +103,7 @@ const checkRules = (metadata, recommendedRules) => {
             width: 3,
             align: 'right'
         }, {
-            name: `Rules (Total: ${rows.length})`,
+            name: `Rules: ${rows.length}`,
             width: w
         }, {
             name: '',
@@ -114,7 +114,7 @@ const checkRules = (metadata, recommendedRules) => {
             width: 2,
             align: 'center'
         }, {
-            name: `Defined in plus ${d} (Undefined: ${u} ${undefinedIcon})`,
+            name: `Defined in plus: ${d} (Undefined: ${u} ${undefinedIcon})`,
             width: 10
         }],
         rows

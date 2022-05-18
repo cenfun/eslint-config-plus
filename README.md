@@ -21,7 +21,7 @@ module.exports = {
 ## Rules
 Base on [eslint@8.15.0](https://github.com/eslint/eslint) (2022/5/18)  
 Recommended: ✔  Fixable: 🔧  
-|   |Rules (Total: 264)              |  |  |Defined in plus 198 (Undefined: 66 ❌)
+|   |Rules: 264                      |  |  |Defined in plus: 198 (Undefined: 66 ❌)
 |---:|:--------------------------------|:--:|:--:|:----------
 |  1|[accessor-pairs](https://eslint.org/docs/rules/accessor-pairs)|  |  |❌         
 |  2|[array-bracket-newline](https://eslint.org/docs/rules/array-bracket-newline)|  |🔧|["error","consistent"]
