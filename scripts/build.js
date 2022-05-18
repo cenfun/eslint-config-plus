@@ -72,7 +72,7 @@ const checkRules = (metadata) => {
 
         let v = myRules[key];
         if (v) {
-            v = `\`${JSON.stringify(v)}\``;
+            v = `<textarea>${JSON.stringify(v)}</textarea>`;
         }
 
         const plus = v || recommended || undefinedIcon;
