@@ -175,7 +175,7 @@ Recommended: ✔  Fixable: 🔧  Undefined in plus: ❌ 66
 |150|[no-plusplus](https://eslint.org/docs/rules/no-plusplus)|  |  |❌         
 |151|[no-promise-executor-return](https://eslint.org/docs/rules/no-promise-executor-return)|  |  |"error"   
 |152|[no-proto](https://eslint.org/docs/rules/no-proto)|  |  |"error"   
-|153|[no-prototype-builtins](https://eslint.org/docs/rules/no-prototype-builtins)|✔ |  |"off"     
+|153|[no-prototype-builtins](https://eslint.org/docs/rules/no-prototype-builtins)|✔ |  |"error"   
 |154|[no-redeclare](https://eslint.org/docs/rules/no-redeclare)|✔ |  |"error"   
 |155|[no-regex-spaces](https://eslint.org/docs/rules/no-regex-spaces)|✔ |🔧|"error"   
 |156|[no-restricted-exports](https://eslint.org/docs/rules/no-restricted-exports)|  |  |❌         
