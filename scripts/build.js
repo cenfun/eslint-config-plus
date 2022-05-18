@@ -15,13 +15,13 @@ const getMarkDownTable = function(d) {
 
     const line = [''];
     d.columns.forEach((c) => {
-        const dash = ''.padEnd(c.width - 1, '-');
-        if (c.align === 'left') {
-            line.push(`:${dash}`);
+        const dash = ''.padEnd(c.width, '-');
+        if (c.align === 'center') {
+            line.push(`:${dash}:`);
         } else if (c.align === 'right') {
             line.push(`${dash}:`);
         } else {
-            line.push(`${dash}-`);
+            line.push(`:${dash}`);
         }
         
     });
@@ -30,7 +30,7 @@ const getMarkDownTable = function(d) {
     d.rows.forEach((r) => {
         const row = [''];
         d.columns.forEach((c, i) => {
-            const s = `${r[i]}`.split('|').join('\\|');
+            const s = `${r[i]}`.split('|').join('&#124;');
             if (c.align === 'right') {
                 row.push(s.padStart(c.width, ' '));
             } else {
@@ -72,7 +72,7 @@ const checkRules = (metadata) => {
 
         let v = myRules[key];
         if (v) {
-            v = `<textarea>${JSON.stringify(v)}</textarea>`;
+            v = JSON.stringify(v);
         }
 
         const plus = v || recommended || undefinedIcon;
@@ -97,18 +97,18 @@ const checkRules = (metadata) => {
             align: 'right'
         }, {
             name: 'Rule',
-            width: w,
-            align: 'left'
+            width: w
         }, {
             name: '',
-            width: 2
+            width: 2,
+            align: 'center'
         }, {
             name: '',
-            width: 2
+            width: 2,
+            align: 'center'
         }, {
             name: 'Defined in plus',
-            width: 10,
-            align: 'left'
+            width: 10
         }],
         rows
     });
