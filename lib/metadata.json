@@ -1,6 +1,6 @@
 {
-    "version": "8.15.0",
-    "date": "2022/5/18",
+    "version": "8.16.0",
+    "date": "2022/5/28",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {

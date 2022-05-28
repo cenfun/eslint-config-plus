@@ -19,7 +19,7 @@ module.exports = {
 ```
 
 # Rules
-Base on [eslint@8.15.0](https://github.com/eslint/eslint) (2022/5/18)  
+Base on [eslint@8.16.0](https://github.com/eslint/eslint) (2022/5/28)  
 Recommended: ✔  Fixable: 🔧  
 |   |Rules: 264                      |  |  |Defined in plus: 198 (Undefined: 66 ❌)
 |---:|:--------------------------------|:--:|:--:|:----------
@@ -198,7 +198,7 @@ Recommended: ✔  Fixable: 🔧
 |173|[no-ternary](https://eslint.org/docs/rules/no-ternary)|  |  |❌         
 |174|[no-this-before-super](https://eslint.org/docs/rules/no-this-before-super)|✔ |  |"error"   
 |175|[no-throw-literal](https://eslint.org/docs/rules/no-throw-literal)|  |  |"error"   
-|176|[no-trailing-spaces](https://eslint.org/docs/rules/no-trailing-spaces)|  |🔧|["error",{"ignoreComments":true,"skipBlankLines":true}]
+|176|[no-trailing-spaces](https://eslint.org/docs/rules/no-trailing-spaces)|  |🔧|["error"] 
 |177|[no-undef](https://eslint.org/docs/rules/no-undef)|✔ |  |"error"   
 |178|[no-undef-init](https://eslint.org/docs/rules/no-undef-init)|  |🔧|"error"   
 |179|[no-undefined](https://eslint.org/docs/rules/no-undefined)|  |  |"error"   

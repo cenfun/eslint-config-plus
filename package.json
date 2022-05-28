@@ -1,22 +1,22 @@
 {
-  "name": "eslint-config-plus",
-  "version": "1.0.2",
-  "description": "eslint-config-plus",
-  "main": "lib/index.js",
-  "scripts": {
-    "build": "node ./scripts/build.js"
-  },
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cenfun/eslint-config-plus.git"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "eight-colors": "^1.0.1",
-    "eslint": "^8.15.0"
-  },
-  "dependencies": {}
+    "name": "eslint-config-plus",
+    "version": "1.0.3",
+    "description": "eslint-config-plus",
+    "main": "lib/index.js",
+    "scripts": {
+        "build": "node ./scripts/build.js"
+    },
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cenfun/eslint-config-plus.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "eight-colors": "^1.0.1",
+        "eslint": "^8.16.0"
+    },
+    "dependencies": {}
 }
