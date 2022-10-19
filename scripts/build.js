@@ -84,11 +84,14 @@ const checkRules = (metadata, recommendedRules) => {
     const title = `### Details  ${os.EOL}`;
     const rulesTable = MG({
         columns: [{
-            name: ''
+            name: '',
+            align: 'right'
         }, {
-            name: 'Rules'
+            name: 'Rules',
+            align: 'left'
         }, {
-            name: 'In plus'
+            name: 'In plus',
+            align: 'left'
         }],
         rows
     });
