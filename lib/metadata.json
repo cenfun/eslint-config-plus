@@ -1,6 +1,6 @@
 {
-    "version": "8.16.0",
-    "date": "2022/5/28",
+    "version": "8.25.0",
+    "date": "2022/10/19",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {
@@ -120,6 +120,9 @@
             "fixable": true
         },
         "lines-between-class-members": {
+            "fixable": true
+        },
+        "logical-assignment-operators": {
             "fixable": true
         },
         "max-classes-per-file": {},

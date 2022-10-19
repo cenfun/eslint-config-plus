@@ -1,48 +1,8 @@
+const os = require('os');
 const fs = require('fs');
 const path = require('path');
 const EC = require('eight-colors');
-
-const getMarkDownTable = function(d) {
-    // console.log(d);
-    const lines = [];
-
-    const header = [''];
-    d.columns.forEach((c) => {
-        const cn = c.name || '';
-        header.push(cn.padEnd(c.width, ' '));
-    });
-    lines.push(header.join('|'));
-
-    const line = [''];
-    d.columns.forEach((c) => {
-        const dash = ''.padEnd(c.width, '-');
-        if (c.align === 'center') {
-            line.push(`:${dash}:`);
-        } else if (c.align === 'right') {
-            line.push(`${dash}:`);
-        } else {
-            line.push(`:${dash}`);
-        }
-        
-    });
-    lines.push(line.join('|'));
-
-    d.rows.forEach((r) => {
-        const row = [''];
-        d.columns.forEach((c, i) => {
-            const s = `${r[i]}`.split('|').join('&#124;');
-            if (c.align === 'right') {
-                row.push(s.padStart(c.width, ' '));
-            } else {
-                row.push(s.padEnd(c.width, ' '));
-            }
-        });
-        lines.push(row.join('|'));
-    });
-
-    return lines.join('\r\n');
-};
-
+const MG = require('markdown-grid');
 
 const checkRules = (metadata, recommendedRules) => {
     const allRules = metadata.rules;
@@ -52,76 +12,89 @@ const checkRules = (metadata, recommendedRules) => {
 
     const info = `Base on [eslint@${metadata.version}](https://github.com/eslint/eslint) (${metadata.date})  \n`;
 
-    const recommendedIcon = '✔';
-    const fixableIcon = '🔧';
-    const undefinedIcon = '❌';
+    const definedInfo = {
+        count: 0
+    };
 
-    let d = 0;
-    let u = 0;
-    let w = 0;
+    const recommendedInfo = {
+        icon: '✔',
+        count: 0
+    };
+
+    const fixableInfo = {
+        icon: '🔧',
+        count: 0
+    };
+
+    const undefinedInfo = {
+        icon: '❌',
+        count: 0
+    };
 
     const rows = Object.keys(allRules).map((key, i) => {
 
         const item = allRules[key];
 
-        w = Math.max(w, key.length);
-
         // console.log(item);
         const name = `[${key}](https://eslint.org/docs/rules/${key})`;
-        const recommended = item.recommended ? recommendedIcon : '';
-        const fixable = item.fixable ? fixableIcon : '';
 
-        let v = myRules[key];
-        if (v) {
-            v = JSON.stringify(v);
-            d += 1;
-            if (item.recommended) {
-                EC.logYellow(`Overwriting recommended ${key}: ${v}`);
-            }
-        } else if (item.recommended) {
-            v = recommendedRules[key];
-            if (v) {
-                d += 1;
-                v = JSON.stringify(v);
-            }
-        } else {
-            v = undefinedIcon;
-            u += 1;
-            EC.logRed(`Undefined: ${u}: ${key} ${recommended}${fixable}`);
+        let recommendedValue = '';
+        if (item.recommended) {
+            recommendedValue = `${recommendedInfo.icon} `;
+            recommendedInfo.count += 1;
+        }
+        let fixableValue = '';
+        if (item.fixable) {
+            fixableValue = `${fixableInfo.icon} `;
+            fixableInfo.count += 1;
         }
 
-        return [i + 1, name, recommended, fixable, v];
+        let definedValue = myRules[key];
+        if (definedValue) {
+            definedValue = JSON.stringify(definedValue);
+            definedInfo.count += 1;
+            if (item.recommended) {
+                EC.logYellow(`Overwriting recommended ${key}: ${definedValue}`);
+            }
+        } else if (item.recommended) {
+            definedValue = recommendedRules[key];
+            definedInfo.count += 1;
+            if (definedValue) {
+                definedValue = JSON.stringify(definedValue);
+            }
+        } else {
+            definedValue = undefinedInfo.icon;
+            undefinedInfo.count += 1;
+            EC.logRed(`Undefined: ${undefinedInfo.count}: ${key} ${recommendedValue}${fixableValue}`);
+        }
+
+        return [i + 1, name, recommendedValue + fixableValue + definedValue];
     });
 
-    const legend = `Recommended: ${recommendedIcon}  Fixable: ${fixableIcon}  \n`;
+    EC.logRed(`Undefined in plus: ${undefinedInfo.count} ${undefinedInfo.icon}`);
 
-    EC.logRed(`Undefined in plus: ${u} ${undefinedIcon}`);
+    const legend = [
+        `- All Eslint rules: ${rows.length}`,
+        `- Defined in plus: ${definedInfo.count} (Based on Eslint defaults and many years of personal programming style, welcome to add)`,
+        `  - Recommended: ${recommendedInfo.count} ${recommendedInfo.icon} (All Eslint official recommended rules)`,
+        `  - Fixable: ${fixableInfo.count} ${fixableInfo.icon} (Good enough formatting tools that no extra tools like Prettier are needed)`,
+        `- Undefined: ${undefinedInfo.count} ${undefinedInfo.icon}`
+    ].join(os.EOL) + os.EOL;
 
-    const rulesTable = getMarkDownTable({
+    const title = `### Details  ${os.EOL}`;
+    const rulesTable = MG({
         columns: [{
-            name: '',
-            width: 3,
-            align: 'right'
+            name: ''
         }, {
-            name: `Rules: ${rows.length}`,
-            width: w
+            name: 'Rules'
         }, {
-            name: '',
-            width: 2,
-            align: 'center'
-        }, {
-            name: '',
-            width: 2,
-            align: 'center'
-        }, {
-            name: `Defined in plus: ${d} (Undefined: ${u} ${undefinedIcon})`,
-            width: 10
+            name: 'In plus'
         }],
         rows
     });
 
     let readmeContent = fs.readFileSync(path.resolve(__dirname, 'README.md')).toString('utf-8');
-    readmeContent = readmeContent.replace('{replace_holder_rules}', info + legend + rulesTable);
+    readmeContent = readmeContent.replace('{replace_holder_rules}', info + legend + title + rulesTable);
     const readmePath = path.resolve(__dirname, '../README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
@@ -131,7 +104,7 @@ const checkRules = (metadata, recommendedRules) => {
 const start = () => {
 
     const date = new Date().toLocaleDateString();
-    
+
     const rules = {};
 
     const builtInRules = require('../node_modules/eslint/lib/rules');
@@ -156,7 +129,7 @@ const start = () => {
     // console.log(rules);
 
     const version = require('../node_modules/eslint/package.json').version;
-    
+
     const metadata = {
         version,
         date,
@@ -166,9 +139,9 @@ const start = () => {
     const rulesPath = path.resolve(__dirname, '../lib/metadata.json');
     fs.writeFileSync(rulesPath, JSON.stringify(metadata, null, 4));
     EC.logGreen(`generated metadata: ${rulesPath}`);
-    
+
     checkRules(metadata, recommendedRules);
-    
+
 };
 
 

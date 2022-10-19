@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-plus",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "eslint-config-plus",
     "main": "lib/index.js",
     "scripts": {
@@ -15,8 +15,8 @@
     },
     "license": "MIT",
     "devDependencies": {
-        "eight-colors": "^1.0.1",
-        "eslint": "^8.18.0"
-    },
-    "dependencies": {}
+        "eight-colors": "^1.0.2",
+        "eslint": "^8.25.0",
+        "markdown-grid": "^1.0.1"
+    }
 }
