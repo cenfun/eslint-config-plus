@@ -77,7 +77,7 @@ const checkRules = (metadata, recommendedRules) => {
         `- All Eslint rules: ${rows.length}`,
         `- Defined in plus: ${definedInfo.count} (Based on Eslint defaults and many years of personal programming style, welcome to add)`,
         `  - Recommended: ${recommendedInfo.count} ${recommendedInfo.icon} (All Eslint official recommended rules)`,
-        `  - Fixable: ${fixableInfo.count} ${fixableInfo.icon} (Good enough formatting tools that no extra tools like Prettier are needed)`,
+        `  - Fixable: ${fixableInfo.count} ${fixableInfo.icon} (Good enough formatting that no extra tools like [Prettier](https://github.com/prettier/prettier) are needed. [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier))`,
         `- Undefined: ${undefinedInfo.count} ${undefinedInfo.icon}`
     ].join(os.EOL) + os.EOL;
 

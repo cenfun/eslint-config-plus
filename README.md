@@ -23,7 +23,7 @@ Base on [eslint@8.25.0](https://github.com/eslint/eslint) (2022/10/19)
 - All Eslint rules: 265
 - Defined in plus: 202 (Based on Eslint defaults and many years of personal programming style, welcome to add)
   - Recommended: 61 ✅ (All Eslint official recommended rules)
-  - Fixable: 100 🔧 (Good enough formatting tools that no extra tools like Prettier are needed)
+  - Fixable: 100 🔧 (Good enough formatting that no extra tools like [Prettier](https://github.com/prettier/prettier) are needed. [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier))
 - Undefined: 63 ❌
 ### Details  
 |   |Rules|In plus|
