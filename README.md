@@ -21,10 +21,10 @@ module.exports = {
 # Rules
 Base on [eslint@8.25.0](https://github.com/eslint/eslint) (2022/10/19)  
 - All Eslint rules: 265
-- Defined in plus: 202 (Based on Eslint defaults and many years of personal programming style, welcome to add)
+- Defined in plus: 201 (Based on Eslint defaults and many years of personal programming style, welcome to add)
   - Recommended: 61 ✅ (All Eslint official recommended rules)
   - Fixable: 100 🔧 (Good enough formatting that no extra tools like [Prettier](https://github.com/prettier/prettier) are needed. [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier))
-- Undefined: 63 ❌
+- Undefined: 64 ❌
 ### Details  
 |   |Rules|In plus|
 |--:|:----|:------|
@@ -82,7 +82,7 @@ Base on [eslint@8.25.0](https://github.com/eslint/eslint) (2022/10/19)
 | 52|[linebreak-style](https://eslint.org/docs/rules/linebreak-style)|🔧 ❌|
 | 53|[lines-around-comment](https://eslint.org/docs/rules/lines-around-comment)|🔧 ["error",{"beforeBlockComment":true}]|
 | 54|[lines-between-class-members](https://eslint.org/docs/rules/lines-between-class-members)|🔧 ["error","always",{"exceptAfterSingleLine":true}]|
-| 55|[logical-assignment-operators](https://eslint.org/docs/rules/logical-assignment-operators)|🔧 "error"|
+| 55|[logical-assignment-operators](https://eslint.org/docs/rules/logical-assignment-operators)|🔧 ❌|
 | 56|[max-classes-per-file](https://eslint.org/docs/rules/max-classes-per-file)|"error"|
 | 57|[max-depth](https://eslint.org/docs/rules/max-depth)|["error",5]|
 | 58|[max-len](https://eslint.org/docs/rules/max-len)|["error",{"code":550,"ignoreStrings":true,"ignoreTrailingComments":true}]|
