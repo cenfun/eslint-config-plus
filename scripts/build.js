@@ -17,7 +17,7 @@ const checkRules = (metadata, recommendedRules) => {
     };
 
     const recommendedInfo = {
-        icon: '✔',
+        icon: '✅',
         count: 0
     };
 
