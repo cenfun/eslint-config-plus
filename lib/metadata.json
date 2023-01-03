@@ -1,6 +1,6 @@
 {
-    "version": "8.25.0",
-    "date": "2022/10/19",
+    "version": "8.31.0",
+    "date": "2023/1/3",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {
@@ -221,6 +221,7 @@
         "no-empty-pattern": {
             "recommended": true
         },
+        "no-empty-static-block": {},
         "no-eq-null": {},
         "no-eval": {},
         "no-ex-assign": {
@@ -306,6 +307,7 @@
         "no-nested-ternary": {},
         "no-new": {},
         "no-new-func": {},
+        "no-new-native-nonconstructor": {},
         "no-new-object": {},
         "no-new-symbol": {
             "recommended": true
