@@ -53,11 +53,16 @@ const checkRules = (metadata, recommendedRules) => {
         if (definedValue) {
             definedValue = JSON.stringify(definedValue);
             definedInfo.count += 1;
+
             if (item.recommended) {
-                EC.logYellow(`Overwriting recommended ${key}: ${definedValue}`);
+
+                const defaultValue = JSON.stringify(recommendedRules[key]);
+                if (definedValue !== defaultValue) {
+                    EC.logYellow(`Overwriting recommended ${key}: ${defaultValue} => ${definedValue}`);
+                }
+
             }
         } else if (item.recommended) {
-            definedValue = recommendedRules[key];
             definedInfo.count += 1;
             if (definedValue) {
                 definedValue = JSON.stringify(definedValue);
@@ -113,6 +118,11 @@ const start = () => {
     const builtInRules = require('../node_modules/eslint/lib/rules');
 
     const recommendedRules = require('../node_modules/eslint/conf/eslint-recommended.js').rules;
+
+    let recommendedJsonStr = JSON.stringify(recommendedRules, null, 4);
+    recommendedJsonStr = recommendedJsonStr.replace(/"/g, "'");
+    const recommendedContent = `module.exports = ${recommendedJsonStr};\n`;
+    fs.writeFileSync(path.resolve(__dirname, '../lib/eslint-recommended-rules.js'), recommendedContent);
 
     builtInRules.forEach(function(rule, ruleId) {
         const meta = rule.meta;

@@ -19,7 +19,7 @@ module.exports = {
 ```
 
 # Rules
-Base on [eslint@8.31.0](https://github.com/eslint/eslint) (2023/1/3)  
+Base on [eslint@8.32.0](https://github.com/eslint/eslint) (2023/1/16)  
 - All Eslint rules: 267
 - Defined in plus: 201 (Based on Eslint defaults and many years of personal programming style, welcome to add)
   - Recommended: 61 ✅ (All Eslint official recommended rules)
