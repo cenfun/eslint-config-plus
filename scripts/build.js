@@ -117,7 +117,7 @@ const start = () => {
 
     const builtInRules = require('../node_modules/eslint/lib/rules');
 
-    const recommendedRules = require('../node_modules/eslint/conf/eslint-recommended.js').rules;
+    const recommendedRules = require('../node_modules/@eslint/js/src/configs/eslint-recommended.js').rules;
 
     let recommendedJsonStr = JSON.stringify(recommendedRules, null, 4);
     recommendedJsonStr = recommendedJsonStr.replace(/"/g, "'");

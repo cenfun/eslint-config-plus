@@ -16,8 +16,9 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "eight-colors": "^1.0.2",
-        "eslint": "^8.32.0",
+        "@eslint/js": "^8.40.0",
+        "eight-colors": "^1.0.3",
+        "eslint": "^8.40.0",
         "markdown-grid": "^1.0.1"
     }
 }
