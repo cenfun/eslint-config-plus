@@ -83,7 +83,8 @@ const checkRules = (metadata, recommendedRules) => {
         if (enable) {
             definedInfo.count += 1;
             icon = definedInfo.icon;
-            value = JSON.stringify(myRules[key]);
+            value = `\`${JSON.stringify(myRules[key])}\``;
+
         } else {
             undefinedInfo.count += 1;
             icon = undefinedInfo.icon;
