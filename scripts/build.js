@@ -128,7 +128,10 @@ const checkRules = (metadata, recommendedRules) => {
             recommendedInfo,
             fixableInfo,
             deprecatedInfo
-        ].map((it) => [it.icon, it.label, it.count, it.count === totalCount ? '' : `${(it.count / totalCount * 100).toFixed(1)}%`])
+        ].map((it) => {
+            const per = it.count === totalCount ? '' : `${(it.count / totalCount * 100).toFixed(1)}%`;
+            return [it.icon, it.label, it.count, per];
+        })
     });
 
     const title = `${os.EOL}${os.EOL}### Details  ${os.EOL}`;
