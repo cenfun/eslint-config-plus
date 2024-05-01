@@ -8,14 +8,15 @@ npm install eslint-config-plus -D
 ```
 # Usage
 ```js
-//.eslintrc.js
-module.exports = {
-   
-    'extends': [
-        'plus'
-    ]
-
-};
+// eslint.config.js
+const plus = require('eslint-config-plus');
+module.exports = [
+    {
+        rules: {
+            ... plus.rules
+        }
+    }
+];
 ```
 
 # Rules

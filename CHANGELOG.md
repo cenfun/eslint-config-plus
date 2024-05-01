@@ -1,7 +1,10 @@
 # Changelog
 
++ 2.0.0
+    - updated eslint to v9
+
 + 1.0.6
-    - update eslint-recommended-rules
+    - updated eslint-recommended-rules
 
 + 1.0.5
     - removed logical-assignment-operators

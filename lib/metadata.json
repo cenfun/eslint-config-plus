@@ -1,33 +1,43 @@
 {
-    "version": "8.40.0",
-    "date": "2023/5/6",
+    "version": "9.1.1",
+    "date": "2024/5/1",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {
+            "deprecated": true,
             "fixable": true
         },
         "array-bracket-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "array-callback-return": {},
         "array-element-newline": {
+            "deprecated": true,
             "fixable": true
         },
         "arrow-body-style": {
             "fixable": true
         },
         "arrow-parens": {
+            "deprecated": true,
             "fixable": true
         },
         "arrow-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "block-scoped-var": {},
         "block-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "brace-style": {
+            "deprecated": true,
             "fixable": true
+        },
+        "callback-return": {
+            "deprecated": true
         },
         "camelcase": {},
         "capitalized-comments": {
@@ -35,16 +45,20 @@
         },
         "class-methods-use-this": {},
         "comma-dangle": {
+            "deprecated": true,
             "fixable": true
         },
         "comma-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "comma-style": {
+            "deprecated": true,
             "fixable": true
         },
         "complexity": {},
         "computed-property-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "consistent-return": {},
@@ -59,12 +73,14 @@
         "default-case-last": {},
         "default-param-last": {},
         "dot-location": {
+            "deprecated": true,
             "fixable": true
         },
         "dot-notation": {
             "fixable": true
         },
         "eol-last": {
+            "deprecated": true,
             "fixable": true
         },
         "eqeqeq": {
@@ -74,52 +90,81 @@
             "recommended": true
         },
         "func-call-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "func-name-matching": {},
         "func-names": {},
         "func-style": {},
         "function-call-argument-newline": {
+            "deprecated": true,
             "fixable": true
         },
         "function-paren-newline": {
+            "deprecated": true,
             "fixable": true
         },
         "generator-star-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "getter-return": {
             "recommended": true
         },
+        "global-require": {
+            "deprecated": true
+        },
         "grouped-accessor-pairs": {},
         "guard-for-in": {},
+        "handle-callback-err": {
+            "deprecated": true
+        },
+        "id-blacklist": {
+            "deprecated": true
+        },
         "id-denylist": {},
         "id-length": {},
         "id-match": {},
         "implicit-arrow-linebreak": {
+            "deprecated": true,
             "fixable": true
         },
         "indent": {
+            "deprecated": true,
+            "fixable": true
+        },
+        "indent-legacy": {
+            "deprecated": true,
             "fixable": true
         },
         "init-declarations": {},
         "jsx-quotes": {
+            "deprecated": true,
             "fixable": true
         },
         "key-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "keyword-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "line-comment-position": {},
         "linebreak-style": {
+            "deprecated": true,
             "fixable": true
         },
         "lines-around-comment": {
+            "deprecated": true,
+            "fixable": true
+        },
+        "lines-around-directive": {
+            "deprecated": true,
             "fixable": true
         },
         "lines-between-class-members": {
+            "deprecated": true,
             "fixable": true
         },
         "logical-assignment-operators": {
@@ -127,24 +172,39 @@
         },
         "max-classes-per-file": {},
         "max-depth": {},
-        "max-len": {},
+        "max-len": {
+            "deprecated": true
+        },
         "max-lines": {},
         "max-lines-per-function": {},
         "max-nested-callbacks": {},
         "max-params": {},
         "max-statements": {},
-        "max-statements-per-line": {},
+        "max-statements-per-line": {
+            "deprecated": true
+        },
         "multiline-comment-style": {
             "fixable": true
         },
         "multiline-ternary": {
+            "deprecated": true,
             "fixable": true
         },
         "new-cap": {},
         "new-parens": {
+            "deprecated": true,
+            "fixable": true
+        },
+        "newline-after-var": {
+            "deprecated": true,
+            "fixable": true
+        },
+        "newline-before-return": {
+            "deprecated": true,
             "fixable": true
         },
         "newline-per-chained-call": {
+            "deprecated": true,
             "fixable": true
         },
         "no-alert": {},
@@ -154,9 +214,15 @@
         },
         "no-await-in-loop": {},
         "no-bitwise": {},
+        "no-buffer-constructor": {
+            "deprecated": true
+        },
         "no-caller": {},
         "no-case-declarations": {
             "recommended": true
+        },
+        "no-catch-shadow": {
+            "deprecated": true
         },
         "no-class-assign": {
             "recommended": true
@@ -168,13 +234,16 @@
             "recommended": true
         },
         "no-confusing-arrow": {
+            "deprecated": true,
             "fixable": true
         },
         "no-console": {},
         "no-const-assign": {
             "recommended": true
         },
-        "no-constant-binary-expression": {},
+        "no-constant-binary-expression": {
+            "recommended": true
+        },
         "no-constant-condition": {
             "recommended": true
         },
@@ -221,7 +290,9 @@
         "no-empty-pattern": {
             "recommended": true
         },
-        "no-empty-static-block": {},
+        "no-empty-static-block": {
+            "recommended": true
+        },
         "no-eq-null": {},
         "no-eval": {},
         "no-ex-assign": {
@@ -239,16 +310,18 @@
             "fixable": true
         },
         "no-extra-parens": {
+            "deprecated": true,
             "fixable": true
         },
         "no-extra-semi": {
-            "recommended": true,
+            "deprecated": true,
             "fixable": true
         },
         "no-fallthrough": {
             "recommended": true
         },
         "no-floating-decimal": {
+            "deprecated": true,
             "fixable": true
         },
         "no-func-assign": {
@@ -266,9 +339,7 @@
             "recommended": true
         },
         "no-inline-comments": {},
-        "no-inner-declarations": {
-            "recommended": true
-        },
+        "no-inner-declarations": {},
         "no-invalid-regexp": {
             "recommended": true
         },
@@ -291,26 +362,46 @@
         "no-misleading-character-class": {
             "recommended": true
         },
-        "no-mixed-operators": {},
+        "no-mixed-operators": {
+            "deprecated": true
+        },
+        "no-mixed-requires": {
+            "deprecated": true
+        },
         "no-mixed-spaces-and-tabs": {
-            "recommended": true
+            "deprecated": true
         },
         "no-multi-assign": {},
         "no-multi-spaces": {
+            "deprecated": true,
             "fixable": true
         },
         "no-multi-str": {},
         "no-multiple-empty-lines": {
+            "deprecated": true,
             "fixable": true
         },
+        "no-native-reassign": {
+            "deprecated": true
+        },
         "no-negated-condition": {},
+        "no-negated-in-lhs": {
+            "deprecated": true
+        },
         "no-nested-ternary": {},
         "no-new": {},
         "no-new-func": {},
-        "no-new-native-nonconstructor": {},
-        "no-new-object": {},
-        "no-new-symbol": {
+        "no-new-native-nonconstructor": {
             "recommended": true
+        },
+        "no-new-object": {
+            "deprecated": true
+        },
+        "no-new-require": {
+            "deprecated": true
+        },
+        "no-new-symbol": {
+            "deprecated": true
         },
         "no-new-wrappers": {},
         "no-nonoctal-decimal-escape": {
@@ -319,12 +410,22 @@
         "no-obj-calls": {
             "recommended": true
         },
+        "no-object-constructor": {},
         "no-octal": {
             "recommended": true
         },
         "no-octal-escape": {},
         "no-param-reassign": {},
+        "no-path-concat": {
+            "deprecated": true
+        },
         "no-plusplus": {},
+        "no-process-env": {
+            "deprecated": true
+        },
+        "no-process-exit": {
+            "deprecated": true
+        },
         "no-promise-executor-return": {},
         "no-proto": {},
         "no-prototype-builtins": {
@@ -340,10 +441,15 @@
         "no-restricted-exports": {},
         "no-restricted-globals": {},
         "no-restricted-imports": {},
+        "no-restricted-modules": {
+            "deprecated": true
+        },
         "no-restricted-properties": {},
         "no-restricted-syntax": {},
         "no-return-assign": {},
-        "no-return-await": {},
+        "no-return-await": {
+            "deprecated": true
+        },
         "no-script-url": {},
         "no-self-assign": {
             "recommended": true
@@ -357,10 +463,19 @@
         "no-shadow-restricted-names": {
             "recommended": true
         },
+        "no-spaced-func": {
+            "deprecated": true,
+            "fixable": true
+        },
         "no-sparse-arrays": {
             "recommended": true
         },
-        "no-tabs": {},
+        "no-sync": {
+            "deprecated": true
+        },
+        "no-tabs": {
+            "deprecated": true
+        },
         "no-template-curly-in-string": {},
         "no-ternary": {},
         "no-this-before-super": {
@@ -368,6 +483,7 @@
         },
         "no-throw-literal": {},
         "no-trailing-spaces": {
+            "deprecated": true,
             "fixable": true
         },
         "no-undef": {
@@ -403,11 +519,14 @@
             "recommended": true,
             "fixable": true
         },
-        "no-unused-private-class-members": {},
+        "no-unused-private-class-members": {
+            "recommended": true
+        },
         "no-unused-vars": {
             "recommended": true
         },
         "no-use-before-define": {},
+        "no-useless-assignment": {},
         "no-useless-backreference": {
             "recommended": true
         },
@@ -435,21 +554,26 @@
         "no-void": {},
         "no-warning-comments": {},
         "no-whitespace-before-property": {
+            "deprecated": true,
             "fixable": true
         },
         "no-with": {
             "recommended": true
         },
         "nonblock-statement-body-position": {
+            "deprecated": true,
             "fixable": true
         },
         "object-curly-newline": {
+            "deprecated": true,
             "fixable": true
         },
         "object-curly-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "object-property-newline": {
+            "deprecated": true,
             "fixable": true
         },
         "object-shorthand": {
@@ -459,18 +583,22 @@
             "fixable": true
         },
         "one-var-declaration-per-line": {
+            "deprecated": true,
             "fixable": true
         },
         "operator-assignment": {
             "fixable": true
         },
         "operator-linebreak": {
+            "deprecated": true,
             "fixable": true
         },
         "padded-blocks": {
+            "deprecated": true,
             "fixable": true
         },
         "padding-line-between-statements": {
+            "deprecated": true,
             "fixable": true
         },
         "prefer-arrow-callback": {
@@ -496,6 +624,9 @@
             "fixable": true
         },
         "prefer-promise-reject-errors": {},
+        "prefer-reflect": {
+            "deprecated": true
+        },
         "prefer-regex-literals": {},
         "prefer-rest-params": {},
         "prefer-spread": {},
@@ -503,9 +634,11 @@
             "fixable": true
         },
         "quote-props": {
+            "deprecated": true,
             "fixable": true
         },
         "quotes": {
+            "deprecated": true,
             "fixable": true
         },
         "radix": {},
@@ -516,15 +649,19 @@
             "recommended": true
         },
         "rest-spread-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "semi": {
+            "deprecated": true,
             "fixable": true
         },
         "semi-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "semi-style": {
+            "deprecated": true,
             "fixable": true
         },
         "sort-imports": {
@@ -535,34 +672,43 @@
             "fixable": true
         },
         "space-before-blocks": {
+            "deprecated": true,
             "fixable": true
         },
         "space-before-function-paren": {
+            "deprecated": true,
             "fixable": true
         },
         "space-in-parens": {
+            "deprecated": true,
             "fixable": true
         },
         "space-infix-ops": {
+            "deprecated": true,
             "fixable": true
         },
         "space-unary-ops": {
+            "deprecated": true,
             "fixable": true
         },
         "spaced-comment": {
+            "deprecated": true,
             "fixable": true
         },
         "strict": {
             "fixable": true
         },
         "switch-colon-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "symbol-description": {},
         "template-curly-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "template-tag-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "unicode-bom": {
@@ -576,12 +722,15 @@
         },
         "vars-on-top": {},
         "wrap-iife": {
+            "deprecated": true,
             "fixable": true
         },
         "wrap-regex": {
+            "deprecated": true,
             "fixable": true
         },
         "yield-star-spacing": {
+            "deprecated": true,
             "fixable": true
         },
         "yoda": {
