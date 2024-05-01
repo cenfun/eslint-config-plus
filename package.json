@@ -4,7 +4,8 @@
     "description": "eslint-config-plus",
     "main": "lib/index.js",
     "scripts": {
-        "build": "node ./scripts/build.js"
+        "build": "node ./scripts/build.js",
+        "patch": "npm run build && sf publish patch"
     },
     "files": [
         "lib"
