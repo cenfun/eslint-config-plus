@@ -84,7 +84,9 @@ const checkRules = (metadata, recommendedRules) => {
             definedInfo.count += 1;
             icon = definedInfo.icon;
             value = `\`${JSON.stringify(myRules[key])}\``;
-
+            if (value.length > 36) {
+                value = `<details><summary>Details</summary>${value}</details>`;
+            }
         } else {
             undefinedInfo.count += 1;
             icon = undefinedInfo.icon;
