@@ -144,7 +144,7 @@ const checkRules = (metadata, recommendedRules) => {
             align: 'left'
         }, {
             name: 'Enabled',
-            align: 'left'
+            align: 'center'
         }, {
             name: 'Value',
             align: 'left'
