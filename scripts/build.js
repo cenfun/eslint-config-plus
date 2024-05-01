@@ -46,18 +46,12 @@ const checkRules = (metadata, recommendedRules) => {
         count: 0
     };
 
-    const getStatus = (item, key, myValue) => {
+    const getRuleType = (item) => {
         const list = [];
 
         if (item.recommended) {
             recommendedInfo.count += 1;
             list.push(recommendedInfo.icon);
-
-            const recommendedValue = JSON.stringify(recommendedRules[key]);
-            if (recommendedValue !== myValue) {
-                EC.logYellow(`[override recommended] ${key}: ${recommendedValue} => ${myValue}`);
-            }
-
         }
 
         if (item.fixable) {
@@ -69,7 +63,6 @@ const checkRules = (metadata, recommendedRules) => {
             deprecatedInfo.count += 1;
             list.push(deprecatedInfo.icon);
         }
-
 
         return list.join('');
     };
@@ -83,6 +76,8 @@ const checkRules = (metadata, recommendedRules) => {
 
         const enable = hasOwn(myRules, key);
 
+        const type = getRuleType(item);
+
         let icon = '';
         let value = '';
         if (enable) {
@@ -92,16 +87,18 @@ const checkRules = (metadata, recommendedRules) => {
         } else {
             undefinedInfo.count += 1;
             icon = undefinedInfo.icon;
+            EC.logRed(`[${undefinedInfo.icon} undefined] ${undefinedInfo.count}: ${key} ${type}`);
         }
 
-        const status = getStatus(item, key, value);
-
-        if (!enable) {
-            EC.logRed(`[${undefinedInfo.icon} undefined] ${undefinedInfo.count}: ${key} ${status}`);
-        }
-
-        return [i + 1, name, icon, value, status];
+        return [i + 1, name, type, icon, value];
     });
+
+    // override rules
+    const myOverrideRules = require(path.resolve(__dirname, '../lib/rules-override.js'));
+    Object.keys(myOverrideRules).forEach((key) => {
+        EC.logYellow(`[override] ${key}: ${recommendedRules[key] || myRules[key]} -> ${JSON.stringify(myOverrideRules[key])}`);
+    });
+
 
     const totalCount = rows.length;
     const legendTable = MG({
@@ -140,13 +137,13 @@ const checkRules = (metadata, recommendedRules) => {
             name: 'Rules',
             align: 'left'
         }, {
+            name: 'Type',
+            align: 'left'
+        }, {
             name: 'Enabled',
             align: 'left'
         }, {
             name: 'Value',
-            align: 'left'
-        }, {
-            name: 'Status',
             align: 'left'
         }],
         rows
@@ -225,7 +222,6 @@ const start = () => {
 
 
     // =====================================================================================
-    // check rules status
     checkRules(metadata, recommendedRules);
 
 };
