@@ -20,7 +20,7 @@ module.exports = [
 ```
 
 # Rules
-Base on [eslint@9.1.1](https://github.com/eslint/eslint) (2024/5/1)  
+Base on [eslint@9.3.0](https://github.com/eslint/eslint) (2024/5/29)  
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
 |   |All Eslint rules|  290|   |
@@ -28,7 +28,7 @@ Base on [eslint@9.1.1](https://github.com/eslint/eslint) (2024/5/1)
 | ❌|Undefined|   86|29.7%|
 | ✅|Recommended|   61|21.0%|
 |🔧|Fixable|  105|36.2%|
-|⚠️|Deprecated|   91|31.4%|
+|⚠️|Deprecated|   93|32.1%|
 
 ### Details  
 |   |Rules|Type|Enabled|Value|
@@ -88,7 +88,7 @@ Base on [eslint@9.1.1](https://github.com/eslint/eslint) (2024/5/1)
 | 53|[jsx-quotes](https://eslint.org/docs/rules/jsx-quotes)|🔧⚠️|  ✔️ |`["error","prefer-double"]`|
 | 54|[key-spacing](https://eslint.org/docs/rules/key-spacing)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"afterColon":true,"mode":"strict"}]`</details>|
 | 55|[keyword-spacing](https://eslint.org/docs/rules/keyword-spacing)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"after":true,"before":true}]`</details>|
-| 56|[line-comment-position](https://eslint.org/docs/rules/line-comment-position)|    |  ✔️ |`["error",{"position":"above"}]`|
+| 56|[line-comment-position](https://eslint.org/docs/rules/line-comment-position)|⚠️|  ✔️ |`["error",{"position":"above"}]`|
 | 57|[linebreak-style](https://eslint.org/docs/rules/linebreak-style)|🔧⚠️|   ❌  |     |
 | 58|[lines-around-comment](https://eslint.org/docs/rules/lines-around-comment)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"beforeBlockComment":true}]`</details>|
 | 59|[lines-around-directive](https://eslint.org/docs/rules/lines-around-directive)|🔧⚠️|   ❌  |     |
@@ -103,7 +103,7 @@ Base on [eslint@9.1.1](https://github.com/eslint/eslint) (2024/5/1)
 | 68|[max-params](https://eslint.org/docs/rules/max-params)|    |  ✔️ |`["error",8]`|
 | 69|[max-statements](https://eslint.org/docs/rules/max-statements)|    |  ✔️ |`["error",50]`|
 | 70|[max-statements-per-line](https://eslint.org/docs/rules/max-statements-per-line)|⚠️|  ✔️ |`["error",{"max":3}]`|
-| 71|[multiline-comment-style](https://eslint.org/docs/rules/multiline-comment-style)|🔧|   ❌  |     |
+| 71|[multiline-comment-style](https://eslint.org/docs/rules/multiline-comment-style)|🔧⚠️|   ❌  |     |
 | 72|[multiline-ternary](https://eslint.org/docs/rules/multiline-ternary)|🔧⚠️|  ✔️ |`["error","never"]`|
 | 73|[new-cap](https://eslint.org/docs/rules/new-cap)|    |  ✔️ |<details><summary>Details</summary>`["error",{"capIsNew":false,"newIsCap":true,"properties":true}]`</details>|
 | 74|[new-parens](https://eslint.org/docs/rules/new-parens)|🔧⚠️|  ✔️ |`"error"`|

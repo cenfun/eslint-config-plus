@@ -1,6 +1,6 @@
 {
-    "version": "9.1.1",
-    "date": "2024/5/1",
+    "version": "9.3.0",
+    "date": "2024/5/29",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {
@@ -150,7 +150,9 @@
             "deprecated": true,
             "fixable": true
         },
-        "line-comment-position": {},
+        "line-comment-position": {
+            "deprecated": true
+        },
         "linebreak-style": {
             "deprecated": true,
             "fixable": true
@@ -184,6 +186,7 @@
             "deprecated": true
         },
         "multiline-comment-style": {
+            "deprecated": true,
             "fixable": true
         },
         "multiline-ternary": {
