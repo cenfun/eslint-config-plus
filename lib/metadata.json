@@ -1,6 +1,6 @@
 {
-    "version": "9.3.0",
-    "date": "2024/5/29",
+    "version": "9.4.0",
+    "date": "2024/6/10",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {

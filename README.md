@@ -20,7 +20,7 @@ module.exports = [
 ```
 
 # Rules
-Base on [eslint@9.3.0](https://github.com/eslint/eslint) (2024/5/29)  
+Base on [eslint@9.4.0](https://github.com/eslint/eslint) (2024/6/10)  
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
 |   |All Eslint rules|  290|   |
@@ -248,7 +248,7 @@ Base on [eslint@9.3.0](https://github.com/eslint/eslint) (2024/5/29)
 |213|[no-unused-expressions](https://eslint.org/docs/rules/no-unused-expressions)|    |  ✔️ |`"error"`|
 |214|[no-unused-labels](https://eslint.org/docs/rules/no-unused-labels)|✅🔧|  ✔️ |`"error"`|
 |215|[no-unused-private-class-members](https://eslint.org/docs/rules/no-unused-private-class-members)|✅  |  ✔️ |`"error"`|
-|216|[no-unused-vars](https://eslint.org/docs/rules/no-unused-vars)|✅  |  ✔️ |<details><summary>Details</summary>`["error",{"args":"none","vars":"local"}]`</details>|
+|216|[no-unused-vars](https://eslint.org/docs/rules/no-unused-vars)|✅  |  ✔️ |<details><summary>Details</summary>`["error",{"args":"none","vars":"local","caughtErrors":"none"}]`</details>|
 |217|[no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)|    |   ❌  |     |
 |218|[no-useless-assignment](https://eslint.org/docs/rules/no-useless-assignment)|    |   ❌  |     |
 |219|[no-useless-backreference](https://eslint.org/docs/rules/no-useless-backreference)|✅  |  ✔️ |`"error"`|

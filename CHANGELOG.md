@@ -1,5 +1,8 @@
 # Changelog
 
++ 2.0.2
+    - added 'caughtErrors': 'none' for no-unused-vars
+
 + 2.0.1
     - updated dependencies
 
