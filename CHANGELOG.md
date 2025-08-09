@@ -1,5 +1,8 @@
 # Changelog
 
++ 2.0.3
+    - updated globals
+
 + 2.0.2
     - added 'caughtErrors': 'none' for no-unused-vars
 

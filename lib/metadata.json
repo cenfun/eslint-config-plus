@@ -1,6 +1,6 @@
 {
-    "version": "9.4.0",
-    "date": "2024/6/10",
+    "version": "9.33.0",
+    "date": "2025/8/9",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {
@@ -211,7 +211,9 @@
             "fixable": true
         },
         "no-alert": {},
-        "no-array-constructor": {},
+        "no-array-constructor": {
+            "fixable": true
+        },
         "no-async-promise-executor": {
             "recommended": true
         },
@@ -489,6 +491,7 @@
             "deprecated": true,
             "fixable": true
         },
+        "no-unassigned-vars": {},
         "no-undef": {
             "recommended": true
         },

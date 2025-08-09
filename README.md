@@ -20,15 +20,15 @@ module.exports = [
 ```
 
 # Rules
-Base on [eslint@9.4.0](https://github.com/eslint/eslint) (2024/6/10)  
+Base on [eslint@9.33.0](https://github.com/eslint/eslint) (2025/8/9)  
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
-|   |All Eslint rules|  290|   |
-|✔️|Defined in plus|  204|70.3%|
-| ❌|Undefined|   86|29.7%|
+|   |All Eslint rules|  291|   |
+|✔️|Defined in plus|  204|70.1%|
+| ❌|Undefined|   87|29.9%|
 | ✅|Recommended|   61|21.0%|
-|🔧|Fixable|  105|36.2%|
-|⚠️|Deprecated|   93|32.1%|
+|🔧|Fixable|  106|36.4%|
+|⚠️|Deprecated|   93|32.0%|
 
 ### Details  
 |   |Rules|Type|Enabled|Value|
@@ -111,7 +111,7 @@ Base on [eslint@9.4.0](https://github.com/eslint/eslint) (2024/6/10)
 | 76|[newline-before-return](https://eslint.org/docs/rules/newline-before-return)|🔧⚠️|   ❌  |     |
 | 77|[newline-per-chained-call](https://eslint.org/docs/rules/newline-per-chained-call)|🔧⚠️|   ❌  |     |
 | 78|[no-alert](https://eslint.org/docs/rules/no-alert)|    |  ✔️ |`"error"`|
-| 79|[no-array-constructor](https://eslint.org/docs/rules/no-array-constructor)|    |  ✔️ |`"error"`|
+| 79|[no-array-constructor](https://eslint.org/docs/rules/no-array-constructor)|🔧|  ✔️ |`"error"`|
 | 80|[no-async-promise-executor](https://eslint.org/docs/rules/no-async-promise-executor)|✅  |  ✔️ |`"error"`|
 | 81|[no-await-in-loop](https://eslint.org/docs/rules/no-await-in-loop)|    |   ❌  |     |
 | 82|[no-bitwise](https://eslint.org/docs/rules/no-bitwise)|    |   ❌  |     |
@@ -233,96 +233,97 @@ Base on [eslint@9.4.0](https://github.com/eslint/eslint) (2024/6/10)
 |198|[no-this-before-super](https://eslint.org/docs/rules/no-this-before-super)|✅  |  ✔️ |`"error"`|
 |199|[no-throw-literal](https://eslint.org/docs/rules/no-throw-literal)|    |  ✔️ |`"error"`|
 |200|[no-trailing-spaces](https://eslint.org/docs/rules/no-trailing-spaces)|🔧⚠️|  ✔️ |`["error"]`|
-|201|[no-undef](https://eslint.org/docs/rules/no-undef)|✅  |  ✔️ |`"error"`|
-|202|[no-undef-init](https://eslint.org/docs/rules/no-undef-init)|🔧|  ✔️ |`"error"`|
-|203|[no-undefined](https://eslint.org/docs/rules/no-undefined)|    |  ✔️ |`"error"`|
-|204|[no-underscore-dangle](https://eslint.org/docs/rules/no-underscore-dangle)|    |   ❌  |     |
-|205|[no-unexpected-multiline](https://eslint.org/docs/rules/no-unexpected-multiline)|✅  |  ✔️ |`"error"`|
-|206|[no-unmodified-loop-condition](https://eslint.org/docs/rules/no-unmodified-loop-condition)|    |  ✔️ |`"error"`|
-|207|[no-unneeded-ternary](https://eslint.org/docs/rules/no-unneeded-ternary)|🔧|  ✔️ |`"error"`|
-|208|[no-unreachable](https://eslint.org/docs/rules/no-unreachable)|✅  |  ✔️ |`"error"`|
-|209|[no-unreachable-loop](https://eslint.org/docs/rules/no-unreachable-loop)|    |  ✔️ |`"error"`|
-|210|[no-unsafe-finally](https://eslint.org/docs/rules/no-unsafe-finally)|✅  |  ✔️ |`"error"`|
-|211|[no-unsafe-negation](https://eslint.org/docs/rules/no-unsafe-negation)|✅  |  ✔️ |`"error"`|
-|212|[no-unsafe-optional-chaining](https://eslint.org/docs/rules/no-unsafe-optional-chaining)|✅  |  ✔️ |`"error"`|
-|213|[no-unused-expressions](https://eslint.org/docs/rules/no-unused-expressions)|    |  ✔️ |`"error"`|
-|214|[no-unused-labels](https://eslint.org/docs/rules/no-unused-labels)|✅🔧|  ✔️ |`"error"`|
-|215|[no-unused-private-class-members](https://eslint.org/docs/rules/no-unused-private-class-members)|✅  |  ✔️ |`"error"`|
-|216|[no-unused-vars](https://eslint.org/docs/rules/no-unused-vars)|✅  |  ✔️ |<details><summary>Details</summary>`["error",{"args":"none","vars":"local","caughtErrors":"none"}]`</details>|
-|217|[no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)|    |   ❌  |     |
-|218|[no-useless-assignment](https://eslint.org/docs/rules/no-useless-assignment)|    |   ❌  |     |
-|219|[no-useless-backreference](https://eslint.org/docs/rules/no-useless-backreference)|✅  |  ✔️ |`"error"`|
-|220|[no-useless-call](https://eslint.org/docs/rules/no-useless-call)|    |   ❌  |     |
-|221|[no-useless-catch](https://eslint.org/docs/rules/no-useless-catch)|✅  |  ✔️ |`"error"`|
-|222|[no-useless-computed-key](https://eslint.org/docs/rules/no-useless-computed-key)|🔧|  ✔️ |`"error"`|
-|223|[no-useless-concat](https://eslint.org/docs/rules/no-useless-concat)|    |  ✔️ |`"error"`|
-|224|[no-useless-constructor](https://eslint.org/docs/rules/no-useless-constructor)|    |  ✔️ |`"error"`|
-|225|[no-useless-escape](https://eslint.org/docs/rules/no-useless-escape)|✅  |  ✔️ |`"error"`|
-|226|[no-useless-rename](https://eslint.org/docs/rules/no-useless-rename)|🔧|  ✔️ |`"error"`|
-|227|[no-useless-return](https://eslint.org/docs/rules/no-useless-return)|🔧|  ✔️ |`"error"`|
-|228|[no-var](https://eslint.org/docs/rules/no-var)|🔧|  ✔️ |`["warn"]`|
-|229|[no-void](https://eslint.org/docs/rules/no-void)|    |   ❌  |     |
-|230|[no-warning-comments](https://eslint.org/docs/rules/no-warning-comments)|    |   ❌  |     |
-|231|[no-whitespace-before-property](https://eslint.org/docs/rules/no-whitespace-before-property)|🔧⚠️|  ✔️ |`"error"`|
-|232|[no-with](https://eslint.org/docs/rules/no-with)|✅  |  ✔️ |`"error"`|
-|233|[nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)|🔧⚠️|   ❌  |     |
-|234|[object-curly-newline](https://eslint.org/docs/rules/object-curly-newline)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"ExportDeclaration":{"minProperties":3,"multiline":true},"ImportDeclaration":{"minProperties":3,"multiline":true},"ObjectExpression":{"consistent":true,"minProperties":1,"multiline":true},"ObjectPattern":{"minProperties":3,"multiline":true}}]`</details>|
-|235|[object-curly-spacing](https://eslint.org/docs/rules/object-curly-spacing)|🔧⚠️|  ✔️ |`["error","always"]`|
-|236|[object-property-newline](https://eslint.org/docs/rules/object-property-newline)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"allowAllPropertiesOnSameLine":true}]`</details>|
-|237|[object-shorthand](https://eslint.org/docs/rules/object-shorthand)|🔧|   ❌  |     |
-|238|[one-var](https://eslint.org/docs/rules/one-var)|🔧|  ✔️ |`["error","never"]`|
-|239|[one-var-declaration-per-line](https://eslint.org/docs/rules/one-var-declaration-per-line)|🔧⚠️|  ✔️ |`["error","always"]`|
-|240|[operator-assignment](https://eslint.org/docs/rules/operator-assignment)|🔧|  ✔️ |`["error","always"]`|
-|241|[operator-linebreak](https://eslint.org/docs/rules/operator-linebreak)|🔧⚠️|  ✔️ |`["error","before"]`|
-|242|[padded-blocks](https://eslint.org/docs/rules/padded-blocks)|🔧⚠️|   ❌  |     |
-|243|[padding-line-between-statements](https://eslint.org/docs/rules/padding-line-between-statements)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"blankLine":"always","next":"*","prev":"directive"},{"blankLine":"any","next":"directive","prev":"directive"},{"blankLine":"always","next":"function","prev":"*"},{"blankLine":"always","next":"block","prev":"*"}]`</details>|
-|244|[prefer-arrow-callback](https://eslint.org/docs/rules/prefer-arrow-callback)|🔧|   ❌  |     |
-|245|[prefer-const](https://eslint.org/docs/rules/prefer-const)|🔧|  ✔️ |`"error"`|
-|246|[prefer-destructuring](https://eslint.org/docs/rules/prefer-destructuring)|🔧|   ❌  |     |
-|247|[prefer-exponentiation-operator](https://eslint.org/docs/rules/prefer-exponentiation-operator)|🔧|   ❌  |     |
-|248|[prefer-named-capture-group](https://eslint.org/docs/rules/prefer-named-capture-group)|    |   ❌  |     |
-|249|[prefer-numeric-literals](https://eslint.org/docs/rules/prefer-numeric-literals)|🔧|  ✔️ |`"error"`|
-|250|[prefer-object-has-own](https://eslint.org/docs/rules/prefer-object-has-own)|🔧|   ❌  |     |
-|251|[prefer-object-spread](https://eslint.org/docs/rules/prefer-object-spread)|🔧|  ✔️ |`"error"`|
-|252|[prefer-promise-reject-errors](https://eslint.org/docs/rules/prefer-promise-reject-errors)|    |   ❌  |     |
-|253|[prefer-reflect](https://eslint.org/docs/rules/prefer-reflect)|⚠️|   ❌  |     |
-|254|[prefer-regex-literals](https://eslint.org/docs/rules/prefer-regex-literals)|    |  ✔️ |`"error"`|
-|255|[prefer-rest-params](https://eslint.org/docs/rules/prefer-rest-params)|    |   ❌  |     |
-|256|[prefer-spread](https://eslint.org/docs/rules/prefer-spread)|    |   ❌  |     |
-|257|[prefer-template](https://eslint.org/docs/rules/prefer-template)|🔧|  ✔️ |`"error"`|
-|258|[quote-props](https://eslint.org/docs/rules/quote-props)|🔧⚠️|   ❌  |     |
-|259|[quotes](https://eslint.org/docs/rules/quotes)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error","single",{"avoidEscape":true}]`</details>|
-|260|[radix](https://eslint.org/docs/rules/radix)|    |   ❌  |     |
-|261|[require-atomic-updates](https://eslint.org/docs/rules/require-atomic-updates)|    |  ✔️ |`"off"`|
-|262|[require-await](https://eslint.org/docs/rules/require-await)|    |  ✔️ |`"error"`|
-|263|[require-unicode-regexp](https://eslint.org/docs/rules/require-unicode-regexp)|    |   ❌  |     |
-|264|[require-yield](https://eslint.org/docs/rules/require-yield)|✅  |  ✔️ |`"error"`|
-|265|[rest-spread-spacing](https://eslint.org/docs/rules/rest-spread-spacing)|🔧⚠️|  ✔️ |`["error","always"]`|
-|266|[semi](https://eslint.org/docs/rules/semi)|🔧⚠️|  ✔️ |`["error","always"]`|
-|267|[semi-spacing](https://eslint.org/docs/rules/semi-spacing)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"after":true,"before":false}]`</details>|
-|268|[semi-style](https://eslint.org/docs/rules/semi-style)|🔧⚠️|  ✔️ |`["error","last"]`|
-|269|[sort-imports](https://eslint.org/docs/rules/sort-imports)|🔧|   ❌  |     |
-|270|[sort-keys](https://eslint.org/docs/rules/sort-keys)|    |   ❌  |     |
-|271|[sort-vars](https://eslint.org/docs/rules/sort-vars)|🔧|   ❌  |     |
-|272|[space-before-blocks](https://eslint.org/docs/rules/space-before-blocks)|🔧⚠️|  ✔️ |`["error","always"]`|
-|273|[space-before-function-paren](https://eslint.org/docs/rules/space-before-function-paren)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"anonymous":"never","asyncArrow":"always","named":"never"}]`</details>|
-|274|[space-in-parens](https://eslint.org/docs/rules/space-in-parens)|🔧⚠️|  ✔️ |`"error"`|
-|275|[space-infix-ops](https://eslint.org/docs/rules/space-infix-ops)|🔧⚠️|  ✔️ |`["error",{"int32Hint":false}]`|
-|276|[space-unary-ops](https://eslint.org/docs/rules/space-unary-ops)|🔧⚠️|  ✔️ |`"error"`|
-|277|[spaced-comment](https://eslint.org/docs/rules/spaced-comment)|🔧⚠️|  ✔️ |`"error"`|
-|278|[strict](https://eslint.org/docs/rules/strict)|🔧|   ❌  |     |
-|279|[switch-colon-spacing](https://eslint.org/docs/rules/switch-colon-spacing)|🔧⚠️|  ✔️ |`"error"`|
-|280|[symbol-description](https://eslint.org/docs/rules/symbol-description)|    |  ✔️ |`"error"`|
-|281|[template-curly-spacing](https://eslint.org/docs/rules/template-curly-spacing)|🔧⚠️|  ✔️ |`"error"`|
-|282|[template-tag-spacing](https://eslint.org/docs/rules/template-tag-spacing)|🔧⚠️|  ✔️ |`"error"`|
-|283|[unicode-bom](https://eslint.org/docs/rules/unicode-bom)|🔧|  ✔️ |`"error"`|
-|284|[use-isnan](https://eslint.org/docs/rules/use-isnan)|✅  |  ✔️ |`"error"`|
-|285|[valid-typeof](https://eslint.org/docs/rules/valid-typeof)|✅  |  ✔️ |`"error"`|
-|286|[vars-on-top](https://eslint.org/docs/rules/vars-on-top)|    |   ❌  |     |
-|287|[wrap-iife](https://eslint.org/docs/rules/wrap-iife)|🔧⚠️|  ✔️ |`["error","inside"]`|
-|288|[wrap-regex](https://eslint.org/docs/rules/wrap-regex)|🔧⚠️|  ✔️ |`"error"`|
-|289|[yield-star-spacing](https://eslint.org/docs/rules/yield-star-spacing)|🔧⚠️|  ✔️ |`"error"`|
-|290|[yoda](https://eslint.org/docs/rules/yoda)|🔧|  ✔️ |`"error"`|
+|201|[no-unassigned-vars](https://eslint.org/docs/rules/no-unassigned-vars)|    |   ❌  |     |
+|202|[no-undef](https://eslint.org/docs/rules/no-undef)|✅  |  ✔️ |`"error"`|
+|203|[no-undef-init](https://eslint.org/docs/rules/no-undef-init)|🔧|  ✔️ |`"error"`|
+|204|[no-undefined](https://eslint.org/docs/rules/no-undefined)|    |  ✔️ |`"error"`|
+|205|[no-underscore-dangle](https://eslint.org/docs/rules/no-underscore-dangle)|    |   ❌  |     |
+|206|[no-unexpected-multiline](https://eslint.org/docs/rules/no-unexpected-multiline)|✅  |  ✔️ |`"error"`|
+|207|[no-unmodified-loop-condition](https://eslint.org/docs/rules/no-unmodified-loop-condition)|    |  ✔️ |`"error"`|
+|208|[no-unneeded-ternary](https://eslint.org/docs/rules/no-unneeded-ternary)|🔧|  ✔️ |`"error"`|
+|209|[no-unreachable](https://eslint.org/docs/rules/no-unreachable)|✅  |  ✔️ |`"error"`|
+|210|[no-unreachable-loop](https://eslint.org/docs/rules/no-unreachable-loop)|    |  ✔️ |`"error"`|
+|211|[no-unsafe-finally](https://eslint.org/docs/rules/no-unsafe-finally)|✅  |  ✔️ |`"error"`|
+|212|[no-unsafe-negation](https://eslint.org/docs/rules/no-unsafe-negation)|✅  |  ✔️ |`"error"`|
+|213|[no-unsafe-optional-chaining](https://eslint.org/docs/rules/no-unsafe-optional-chaining)|✅  |  ✔️ |`"error"`|
+|214|[no-unused-expressions](https://eslint.org/docs/rules/no-unused-expressions)|    |  ✔️ |`"error"`|
+|215|[no-unused-labels](https://eslint.org/docs/rules/no-unused-labels)|✅🔧|  ✔️ |`"error"`|
+|216|[no-unused-private-class-members](https://eslint.org/docs/rules/no-unused-private-class-members)|✅  |  ✔️ |`"error"`|
+|217|[no-unused-vars](https://eslint.org/docs/rules/no-unused-vars)|✅  |  ✔️ |<details><summary>Details</summary>`["error",{"args":"none","vars":"local","caughtErrors":"none"}]`</details>|
+|218|[no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)|    |   ❌  |     |
+|219|[no-useless-assignment](https://eslint.org/docs/rules/no-useless-assignment)|    |   ❌  |     |
+|220|[no-useless-backreference](https://eslint.org/docs/rules/no-useless-backreference)|✅  |  ✔️ |`"error"`|
+|221|[no-useless-call](https://eslint.org/docs/rules/no-useless-call)|    |   ❌  |     |
+|222|[no-useless-catch](https://eslint.org/docs/rules/no-useless-catch)|✅  |  ✔️ |`"error"`|
+|223|[no-useless-computed-key](https://eslint.org/docs/rules/no-useless-computed-key)|🔧|  ✔️ |`"error"`|
+|224|[no-useless-concat](https://eslint.org/docs/rules/no-useless-concat)|    |  ✔️ |`"error"`|
+|225|[no-useless-constructor](https://eslint.org/docs/rules/no-useless-constructor)|    |  ✔️ |`"error"`|
+|226|[no-useless-escape](https://eslint.org/docs/rules/no-useless-escape)|✅  |  ✔️ |`"error"`|
+|227|[no-useless-rename](https://eslint.org/docs/rules/no-useless-rename)|🔧|  ✔️ |`"error"`|
+|228|[no-useless-return](https://eslint.org/docs/rules/no-useless-return)|🔧|  ✔️ |`"error"`|
+|229|[no-var](https://eslint.org/docs/rules/no-var)|🔧|  ✔️ |`["warn"]`|
+|230|[no-void](https://eslint.org/docs/rules/no-void)|    |   ❌  |     |
+|231|[no-warning-comments](https://eslint.org/docs/rules/no-warning-comments)|    |   ❌  |     |
+|232|[no-whitespace-before-property](https://eslint.org/docs/rules/no-whitespace-before-property)|🔧⚠️|  ✔️ |`"error"`|
+|233|[no-with](https://eslint.org/docs/rules/no-with)|✅  |  ✔️ |`"error"`|
+|234|[nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)|🔧⚠️|   ❌  |     |
+|235|[object-curly-newline](https://eslint.org/docs/rules/object-curly-newline)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"ExportDeclaration":{"minProperties":3,"multiline":true},"ImportDeclaration":{"minProperties":3,"multiline":true},"ObjectExpression":{"consistent":true,"minProperties":1,"multiline":true},"ObjectPattern":{"minProperties":3,"multiline":true}}]`</details>|
+|236|[object-curly-spacing](https://eslint.org/docs/rules/object-curly-spacing)|🔧⚠️|  ✔️ |`["error","always"]`|
+|237|[object-property-newline](https://eslint.org/docs/rules/object-property-newline)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"allowAllPropertiesOnSameLine":true}]`</details>|
+|238|[object-shorthand](https://eslint.org/docs/rules/object-shorthand)|🔧|   ❌  |     |
+|239|[one-var](https://eslint.org/docs/rules/one-var)|🔧|  ✔️ |`["error","never"]`|
+|240|[one-var-declaration-per-line](https://eslint.org/docs/rules/one-var-declaration-per-line)|🔧⚠️|  ✔️ |`["error","always"]`|
+|241|[operator-assignment](https://eslint.org/docs/rules/operator-assignment)|🔧|  ✔️ |`["error","always"]`|
+|242|[operator-linebreak](https://eslint.org/docs/rules/operator-linebreak)|🔧⚠️|  ✔️ |`["error","before"]`|
+|243|[padded-blocks](https://eslint.org/docs/rules/padded-blocks)|🔧⚠️|   ❌  |     |
+|244|[padding-line-between-statements](https://eslint.org/docs/rules/padding-line-between-statements)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"blankLine":"always","next":"*","prev":"directive"},{"blankLine":"any","next":"directive","prev":"directive"},{"blankLine":"always","next":"function","prev":"*"},{"blankLine":"always","next":"block","prev":"*"}]`</details>|
+|245|[prefer-arrow-callback](https://eslint.org/docs/rules/prefer-arrow-callback)|🔧|   ❌  |     |
+|246|[prefer-const](https://eslint.org/docs/rules/prefer-const)|🔧|  ✔️ |`"error"`|
+|247|[prefer-destructuring](https://eslint.org/docs/rules/prefer-destructuring)|🔧|   ❌  |     |
+|248|[prefer-exponentiation-operator](https://eslint.org/docs/rules/prefer-exponentiation-operator)|🔧|   ❌  |     |
+|249|[prefer-named-capture-group](https://eslint.org/docs/rules/prefer-named-capture-group)|    |   ❌  |     |
+|250|[prefer-numeric-literals](https://eslint.org/docs/rules/prefer-numeric-literals)|🔧|  ✔️ |`"error"`|
+|251|[prefer-object-has-own](https://eslint.org/docs/rules/prefer-object-has-own)|🔧|   ❌  |     |
+|252|[prefer-object-spread](https://eslint.org/docs/rules/prefer-object-spread)|🔧|  ✔️ |`"error"`|
+|253|[prefer-promise-reject-errors](https://eslint.org/docs/rules/prefer-promise-reject-errors)|    |   ❌  |     |
+|254|[prefer-reflect](https://eslint.org/docs/rules/prefer-reflect)|⚠️|   ❌  |     |
+|255|[prefer-regex-literals](https://eslint.org/docs/rules/prefer-regex-literals)|    |  ✔️ |`"error"`|
+|256|[prefer-rest-params](https://eslint.org/docs/rules/prefer-rest-params)|    |   ❌  |     |
+|257|[prefer-spread](https://eslint.org/docs/rules/prefer-spread)|    |   ❌  |     |
+|258|[prefer-template](https://eslint.org/docs/rules/prefer-template)|🔧|  ✔️ |`"error"`|
+|259|[quote-props](https://eslint.org/docs/rules/quote-props)|🔧⚠️|   ❌  |     |
+|260|[quotes](https://eslint.org/docs/rules/quotes)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error","single",{"avoidEscape":true}]`</details>|
+|261|[radix](https://eslint.org/docs/rules/radix)|    |   ❌  |     |
+|262|[require-atomic-updates](https://eslint.org/docs/rules/require-atomic-updates)|    |  ✔️ |`"off"`|
+|263|[require-await](https://eslint.org/docs/rules/require-await)|    |  ✔️ |`"error"`|
+|264|[require-unicode-regexp](https://eslint.org/docs/rules/require-unicode-regexp)|    |   ❌  |     |
+|265|[require-yield](https://eslint.org/docs/rules/require-yield)|✅  |  ✔️ |`"error"`|
+|266|[rest-spread-spacing](https://eslint.org/docs/rules/rest-spread-spacing)|🔧⚠️|  ✔️ |`["error","always"]`|
+|267|[semi](https://eslint.org/docs/rules/semi)|🔧⚠️|  ✔️ |`["error","always"]`|
+|268|[semi-spacing](https://eslint.org/docs/rules/semi-spacing)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"after":true,"before":false}]`</details>|
+|269|[semi-style](https://eslint.org/docs/rules/semi-style)|🔧⚠️|  ✔️ |`["error","last"]`|
+|270|[sort-imports](https://eslint.org/docs/rules/sort-imports)|🔧|   ❌  |     |
+|271|[sort-keys](https://eslint.org/docs/rules/sort-keys)|    |   ❌  |     |
+|272|[sort-vars](https://eslint.org/docs/rules/sort-vars)|🔧|   ❌  |     |
+|273|[space-before-blocks](https://eslint.org/docs/rules/space-before-blocks)|🔧⚠️|  ✔️ |`["error","always"]`|
+|274|[space-before-function-paren](https://eslint.org/docs/rules/space-before-function-paren)|🔧⚠️|  ✔️ |<details><summary>Details</summary>`["error",{"anonymous":"never","asyncArrow":"always","named":"never"}]`</details>|
+|275|[space-in-parens](https://eslint.org/docs/rules/space-in-parens)|🔧⚠️|  ✔️ |`"error"`|
+|276|[space-infix-ops](https://eslint.org/docs/rules/space-infix-ops)|🔧⚠️|  ✔️ |`["error",{"int32Hint":false}]`|
+|277|[space-unary-ops](https://eslint.org/docs/rules/space-unary-ops)|🔧⚠️|  ✔️ |`"error"`|
+|278|[spaced-comment](https://eslint.org/docs/rules/spaced-comment)|🔧⚠️|  ✔️ |`"error"`|
+|279|[strict](https://eslint.org/docs/rules/strict)|🔧|   ❌  |     |
+|280|[switch-colon-spacing](https://eslint.org/docs/rules/switch-colon-spacing)|🔧⚠️|  ✔️ |`"error"`|
+|281|[symbol-description](https://eslint.org/docs/rules/symbol-description)|    |  ✔️ |`"error"`|
+|282|[template-curly-spacing](https://eslint.org/docs/rules/template-curly-spacing)|🔧⚠️|  ✔️ |`"error"`|
+|283|[template-tag-spacing](https://eslint.org/docs/rules/template-tag-spacing)|🔧⚠️|  ✔️ |`"error"`|
+|284|[unicode-bom](https://eslint.org/docs/rules/unicode-bom)|🔧|  ✔️ |`"error"`|
+|285|[use-isnan](https://eslint.org/docs/rules/use-isnan)|✅  |  ✔️ |`"error"`|
+|286|[valid-typeof](https://eslint.org/docs/rules/valid-typeof)|✅  |  ✔️ |`"error"`|
+|287|[vars-on-top](https://eslint.org/docs/rules/vars-on-top)|    |   ❌  |     |
+|288|[wrap-iife](https://eslint.org/docs/rules/wrap-iife)|🔧⚠️|  ✔️ |`["error","inside"]`|
+|289|[wrap-regex](https://eslint.org/docs/rules/wrap-regex)|🔧⚠️|  ✔️ |`"error"`|
+|290|[yield-star-spacing](https://eslint.org/docs/rules/yield-star-spacing)|🔧⚠️|  ✔️ |`"error"`|
+|291|[yoda](https://eslint.org/docs/rules/yoda)|🔧|  ✔️ |`"error"`|
 
 # Changelog
 [CHANGELOG.md](CHANGELOG.md)
