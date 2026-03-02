@@ -1,5 +1,8 @@
 # Changelog
 
++ 2.0.4
+    - updated eslint v10
+
 + 2.0.3
     - updated globals
 
