@@ -1,6 +1,6 @@
 {
-    "version": "9.33.0",
-    "date": "2025/8/9",
+    "version": "10.0.2",
+    "date": "2026/3/2",
     "rules": {
         "accessor-pairs": {},
         "array-bracket-newline": {
@@ -491,7 +491,9 @@
             "deprecated": true,
             "fixable": true
         },
-        "no-unassigned-vars": {},
+        "no-unassigned-vars": {
+            "recommended": true
+        },
         "no-undef": {
             "recommended": true
         },
@@ -532,7 +534,9 @@
             "recommended": true
         },
         "no-use-before-define": {},
-        "no-useless-assignment": {},
+        "no-useless-assignment": {
+            "recommended": true
+        },
         "no-useless-backreference": {
             "recommended": true
         },
@@ -638,6 +642,9 @@
         "prefer-spread": {},
         "prefer-template": {
             "fixable": true
+        },
+        "preserve-caught-error": {
+            "recommended": true
         },
         "quote-props": {
             "deprecated": true,
