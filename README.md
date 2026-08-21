@@ -20,7 +20,7 @@ module.exports = [
 ```
 
 # Rules
-Base on [eslint@10.0.2](https://github.com/eslint/eslint) (2026/3/2)  
+Base on [eslint@10.8.1](https://github.com/eslint/eslint) (8/21/2026)  
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
 |   |All Eslint rules|  292|   |
