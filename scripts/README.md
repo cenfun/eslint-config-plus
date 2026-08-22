@@ -7,9 +7,25 @@ Eslint config plus = Eslint official recommended rules + most fixable and normal
 npm install eslint-config-plus -D
 ```
 # Usage
+## ESM
 ```js
 // eslint.config.js
+import plus from 'eslint-config-plus';
+
+export default [
+    {
+        rules: {
+            ... plus.rules
+        }
+    }
+];
+```
+
+## CommonJS
+```js
+// eslint.config.cjs
 const plus = require('eslint-config-plus');
+
 module.exports = [
     {
         rules: {

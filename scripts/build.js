@@ -1,17 +1,28 @@
-const os = require('os');
-const fs = require('fs');
-const path = require('path');
-const EC = require('eight-colors');
-const MG = require('markdown-grid');
+import os from 'node:os';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import eslintJs from '@eslint/js';
+import eslintPackage from 'eslint/package.json' with { type: 'json' };
+import { buildSync } from 'esbuild';
+import EC from 'eight-colors';
+import globals from 'globals';
+import MG from 'markdown-grid';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootPath = path.resolve(__dirname, '..');
+const srcPath = path.join(rootPath, 'src');
+const distPath = path.join(rootPath, 'dist');
+const eslintPath = path.dirname(fileURLToPath(import.meta.resolve('eslint/package.json')));
+const builtInRulesUrl = pathToFileURL(path.join(eslintPath, 'lib/rules/index.js'));
+const { default: builtInRules } = await import(builtInRulesUrl);
 
 const hasOwn = function(obj, key) {
     return Object.prototype.hasOwnProperty.call(obj, key);
 };
 
-const checkRules = (metadata, recommendedRules) => {
+const checkRules = (metadata, recommendedRules, myEslint, myOverrideRules) => {
     const allRules = metadata.rules;
-    const myEslint = require(path.resolve(__dirname, '../lib/index.js'));
-
     const myRules = myEslint.rules;
 
     const info = `Base on [eslint@${metadata.version}](https://github.com/eslint/eslint) (${metadata.date})  \n`;
@@ -78,7 +89,7 @@ const checkRules = (metadata, recommendedRules) => {
 
         const type = getRuleType(item);
 
-        let icon = '';
+        let icon;
         let value = '';
         if (enable) {
             definedInfo.count += 1;
@@ -97,7 +108,6 @@ const checkRules = (metadata, recommendedRules) => {
     });
 
     // override rules
-    const myOverrideRules = require(path.resolve(__dirname, '../lib/rules-override.js'));
     Object.keys(myOverrideRules).forEach((key) => {
         EC.logYellow(`[override] ${key}: ${recommendedRules[key] || myRules[key]} -> ${JSON.stringify(myOverrideRules[key])}`);
     });
@@ -157,28 +167,27 @@ const checkRules = (metadata, recommendedRules) => {
 
     let readmeContent = fs.readFileSync(path.resolve(__dirname, 'README.md')).toString('utf-8');
     readmeContent = readmeContent.replace('{replace_holder_rules}', info + legendTable + title + rulesTable);
-    const readmePath = path.resolve(__dirname, '../README.md');
+    const readmePath = path.join(rootPath, 'README.md');
     fs.writeFileSync(readmePath, readmeContent);
     EC.logGreen('generated README.md');
 
 };
 
-const start = () => {
+const start = async () => {
 
     const date = new Date().toLocaleDateString();
 
     // =====================================================================================
     // save recommended rules
-    const recommendedRules = require('../node_modules/@eslint/js/src/configs/eslint-recommended.js').rules;
+    const recommendedRules = eslintJs.configs.recommended.rules;
 
     let recommendedJsonStr = JSON.stringify(recommendedRules, null, 4);
     recommendedJsonStr = recommendedJsonStr.replace(/"/g, "'");
-    const recommendedContent = `module.exports = ${recommendedJsonStr};\n`;
-    fs.writeFileSync(path.resolve(__dirname, '../lib/rules-recommended.js'), recommendedContent);
+    const recommendedContent = `export default ${recommendedJsonStr};\n`;
+    fs.writeFileSync(path.join(srcPath, 'rules-recommended.js'), recommendedContent);
 
     // =====================================================================================
     // save globals
-    const globals = require('globals');
     const myGlobals = {
         ... globals.browser,
         ... globals.node,
@@ -191,13 +200,12 @@ const start = () => {
 
     let globalsJsonStr = JSON.stringify(myGlobals, null, 4);
     globalsJsonStr = globalsJsonStr.replace(/"/g, "'");
-    const globalsContent = `module.exports = ${globalsJsonStr};\n`;
-    fs.writeFileSync(path.resolve(__dirname, '../lib/globals.js'), globalsContent);
+    const globalsContent = `export default ${globalsJsonStr};\n`;
+    fs.writeFileSync(path.join(srcPath, 'globals.js'), globalsContent);
 
     // =====================================================================================
     // all build-in rules
     const rules = {};
-    const builtInRules = require('../node_modules/eslint/lib/rules');
     builtInRules.forEach(function(rule, ruleId) {
         const meta = rule.meta;
         const info = {};
@@ -215,22 +223,61 @@ const start = () => {
 
     // console.log(rules);
 
-    const version = require('../node_modules/eslint/package.json').version;
+    const version = eslintPackage.version;
     const metadata = {
         version,
         date,
         rules
     };
 
-    const rulesPath = path.resolve(__dirname, '../lib/metadata.json');
+    const rulesPath = path.join(srcPath, 'metadata.json');
     fs.writeFileSync(rulesPath, JSON.stringify(metadata, null, 4));
     EC.logGreen(`generated metadata: ${rulesPath}`);
 
 
     // =====================================================================================
-    checkRules(metadata, recommendedRules);
+    const [{ default: myEslint }, { default: myOverrideRules }] = await Promise.all([
+        import(pathToFileURL(path.join(srcPath, 'index.js'))),
+        import(pathToFileURL(path.join(srcPath, 'rules-override.js')))
+    ]);
+    checkRules(metadata, recommendedRules, myEslint, myOverrideRules);
+
+    // =====================================================================================
+    // bundle ESM and CommonJS entries
+    fs.rmSync(distPath, {
+        recursive: true,
+        force: true
+    });
+    fs.mkdirSync(distPath, {
+        recursive: true
+    });
+
+    const entryPath = path.join(srcPath, 'index.js');
+    const buildOptions = {
+        entryPoints: [entryPath],
+        bundle: true,
+        platform: 'node',
+        target: 'node20',
+        logLevel: 'silent'
+    };
+
+    buildSync({
+        ... buildOptions,
+        outfile: path.join(distPath, 'index.js'),
+        format: 'esm'
+    });
+
+    buildSync({
+        ... buildOptions,
+        outfile: path.join(distPath, 'index.cjs'),
+        format: 'cjs',
+        footer: {
+            js: 'module.exports = module.exports.default;'
+        }
+    });
+    EC.logGreen(`generated bundles: ${distPath}`);
 
 };
 
 
-start();
+await start();

@@ -1,7 +1,7 @@
 // if some problems reported by the rule are automatically fixable by the --fix command line option
 // formatters
 
-module.exports = {
+export default {
     'array-bracket-newline': ['error', 'consistent'],
     'array-bracket-spacing': ['error', 'never'],
     'array-element-newline': ['error', 'consistent'],

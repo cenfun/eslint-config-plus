@@ -7,9 +7,25 @@ Eslint config plus = Eslint official recommended rules + most fixable and normal
 npm install eslint-config-plus -D
 ```
 # Usage
+## ESM
 ```js
 // eslint.config.js
+import plus from 'eslint-config-plus';
+
+export default [
+    {
+        rules: {
+            ... plus.rules
+        }
+    }
+];
+```
+
+## CommonJS
+```js
+// eslint.config.cjs
 const plus = require('eslint-config-plus');
+
 module.exports = [
     {
         rules: {
@@ -20,7 +36,7 @@ module.exports = [
 ```
 
 # Rules
-Base on [eslint@10.8.1](https://github.com/eslint/eslint) (8/21/2026)  
+Base on [eslint@10.9.0](https://github.com/eslint/eslint) (8/22/2026)  
 |   |Rules|Count|   |
 |:-:|-----|----:|--:|
 |   |All Eslint rules|  292|   |

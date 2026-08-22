@@ -1,8 +1,8 @@
 // https://eslint.org/docs/rules/
 
-const plus = require('./lib/index.js');
+import plus from './src/index.js';
 
 // https://eslint.org/docs/latest/use/configure/configuration-files
-module.exports = [
+export default [
     plus
 ];

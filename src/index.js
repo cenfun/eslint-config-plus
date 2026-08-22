@@ -1,15 +1,15 @@
 // https://eslint.org/docs/rules/
 
-const rulesRecommended = require('./rules-recommended.js');
-const rulesFixable = require('./rules-fixable.js');
-const rulesNormal = require('./rules-normal.js');
+import rulesRecommended from './rules-recommended.js';
+import rulesFixable from './rules-fixable.js';
+import rulesNormal from './rules-normal.js';
 
-const rulesOverride = require('./rules-override.js');
+import rulesOverride from './rules-override.js';
 
-const globals = require('./globals.js');
+import globals from './globals.js';
 
 // https://eslint.org/docs/latest/use/configure/configuration-files
-module.exports = {
+export default {
 
     name: 'eslint-config-plus',
 

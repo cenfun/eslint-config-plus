@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     'AbortController': false,
     'AbortSignal': false,
     'AbsoluteOrientationSensor': false,

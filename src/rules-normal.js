@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     'complexity': ['error', 8],
     'default-case': 'error',
     'default-case-last': 'error',

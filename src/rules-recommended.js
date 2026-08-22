@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     'constructor-super': 'error',
     'for-direction': 'error',
     'getter-return': 'error',
