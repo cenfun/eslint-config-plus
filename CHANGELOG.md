@@ -1,5 +1,10 @@
 # Changelog
 
++ 2.1.0
+    - added ESM and CommonJS support
+    - moved source files to `src`
+    - added esbuild output in `dist`
+
 + 2.0.4
     - updated eslint v10
 

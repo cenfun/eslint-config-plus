@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-plus",
-    "version": "2.0.4",
+    "version": "2.1.0",
     "description": "eslint-config-plus",
     "type": "module",
     "main": "./dist/index.cjs",
@@ -12,7 +12,8 @@
         }
     },
     "scripts": {
-        "build": "node ./scripts/build.js"
+        "build": "node ./scripts/build.js",
+        "prepack": "npm run build"
     },
     "files": [
         "dist"
